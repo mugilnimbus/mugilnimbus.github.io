@@ -38,7 +38,7 @@ function draw(markup, noteMarkup = '') {
 // On a narrow screen the drawing is cropped to the object, so it stays large enough to read.
 function fit() {
   const narrow = innerWidth < 900;
-  $('#stage').setAttribute('viewBox', !narrow || view === 'intro' ? '0 0 1200 600' : view === 'detail' ? '250 30 700 540' : '380 120 440 350');
+  $('#stage').setAttribute('viewBox', !narrow ? '0 0 1200 600' : view === 'intro' ? '160 70 880 480' : view === 'detail' ? '250 30 700 540' : '380 120 440 350');
 }
 addEventListener('resize', fit);
 function reset(next) {
@@ -161,6 +161,7 @@ function route() {
   showIntro();
 }
 addEventListener('hashchange', route);
+addEventListener('resize', fit);
 play.addEventListener('click', () => {
   if (plan && elapsed >= plan.end - .2) { elapsed = 0; shown = -2; frame.classList.remove(...states); if (view === 'detail') frame.classList.add('titled', 'docked'); setPlaying(true); return; }
   setPlaying(!playing);

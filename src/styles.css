@@ -228,5 +228,7 @@ header nav { display: flex; gap: 10px; }
   .narration { bottom: 92px; } [data-view="intro"] .narration { bottom: 190px; } .skills { bottom: 262px; } [data-view="intro"] .scene { padding: 130px 0 400px; } [data-view="intro"] .scene svg { height: max(120px, calc(100dvh - 540px)); }
   .dock { bottom: 22px; gap: 8px; padding: 7px 10px; } .ticks { gap: 5px; } .ticks div { gap: 2px; } .ticks a { width: 5px; } .ticks a[aria-current] { width: 12px; }
   .start { flex-direction: column; width: calc(100% - 40px); } .skip { right: 14px; bottom: 8px; }
+  .pick { display: none; } .strands .hello { transform: translateY(-33vh) scale(.62); }
+  .ask p { font-size: clamp(30px, 8.4vw, 50px); max-width: 88vw; } .ask { padding: 0 6vw 16vh; }
   .sheet, .sheet.about { right: 12px; left: 12px; width: auto; top: 70px; }
 }
