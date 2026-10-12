@@ -62,4 +62,4 @@ The site is static and has no dependencies. Any static host can serve the reposi
 - Nine projects link to public source; seven are private or currently unavailable and say so.
 - Not yet checked on physical phones, other browsers or with a screen reader.
 
-The design is recorded in the [architecture model](docs/architecture.html).
+The design is recorded in the [architecture model](https://mugilnimbus.github.io/docs/architecture.html).

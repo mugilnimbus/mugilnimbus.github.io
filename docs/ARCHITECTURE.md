@@ -2,7 +2,7 @@
 
 The portfolio is a static browser experience. It presents project information and schematic drawings; it cannot execute desktop tools, run models, access confidential project data, or alter repositories.
 
-The [architecture model](architecture.html) records responsibilities, dependencies, rules and flows. Its source is `architecture/model.js`.
+The [architecture model](https://mugilnimbus.github.io/docs/architecture.html) records responsibilities, dependencies, rules and flows. Its source is `architecture/model.js`.
 
 | Boundary | Responsibility |
 | --- | --- |
