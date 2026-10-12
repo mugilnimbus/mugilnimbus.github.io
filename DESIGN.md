@@ -18,13 +18,13 @@ No other colours are used. Emphasis comes from brightness: the current step is w
 
 | Role | Face | Size |
 | --- | --- | --- |
-| Question, notes, closing line | Handwriting stack led by Ink Free | 26px notes; question up to 58px |
+| Question, notes, closing line | Ink Free where installed, otherwise the bundled Shadows Into Light, then Bradley Hand ITC | 26px notes; question up to 58px |
 | Project title | System sans, bold | up to 52px |
 | Narration | System sans, light | up to 24px |
 | Labels | System sans, capitals, wide tracking | 10 to 12px |
 | Skills list | System sans, light, capitals, wide tracking, dimmed silver | 14px |
 
-The handwriting face is whichever the visitor's system provides, so lettering varies between devices.
+Windows shows Ink Free. Devices without it load Shadows Into Light from `assets/fonts/`, so phones, tablets and other computers share one handwriting face.
 
 ## Layout
 

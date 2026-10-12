@@ -59,6 +59,7 @@ The site is static and has no dependencies. Any static host can serve the reposi
 - Drawings are schematic explanations. The site does not run any featured project, model or tool.
 - Hook questions are drafts drawn from the reviewed project descriptions.
 - The skills list is shown only on windows at least 1560px wide.
+- Handwriting is Ink Free on Windows and the bundled Shadows Into Light (SIL Open Font License, in `assets/fonts/`) elsewhere.
 - Nine projects link to public source; seven are private or currently unavailable and say so.
 - Not yet checked on physical phones, other browsers or with a screen reader.
 

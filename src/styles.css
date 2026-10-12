@@ -1,5 +1,6 @@
+@font-face { font-family: "Shadows Into Light"; src: local("Shadows Into Light"), url("../assets/fonts/shadows-into-light.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 112%; }
 :root { --white: #ffffff; --silver: #c9cdd2; --grey: #74787d; --dim: #3a3c3f; --hair: rgba(255,255,255,.14); --glass: rgba(255,255,255,.06); --glass-edge: rgba(255,255,255,.18);
-  --hand: "Ink Free", "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", cursive; --sans: "Segoe UI", system-ui, -apple-system, sans-serif; --ease: cubic-bezier(.2,.7,.2,1); --step: .28s; }
+  --hand: "Ink Free", "Shadows Into Light", "Bradley Hand ITC", "Bradley Hand", cursive; --sans: "Segoe UI", system-ui, -apple-system, sans-serif; --ease: cubic-bezier(.2,.7,.2,1); --step: .28s; }
 * { box-sizing: border-box; margin: 0; }
 html { background: #000; }
 body { background: #000; color: var(--white); font: 400 15px/1.55 var(--sans); min-height: 100dvh; }
