@@ -212,13 +212,19 @@ header nav { display: flex; gap: 10px; }
 .reading footer { display: flex; flex-wrap: wrap; gap: 20px; padding-top: 30px; border-top: 1px solid var(--hair); color: var(--grey); font-size: 13px; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } .narration span { opacity: 1; transform: none; } }
-@media (max-width: 1560px) { .skills { display: none; } }
+@media (max-width: 1560px) { .skills { max-width: calc(50vw - 300px); } .skills li { font-size: 12px; letter-spacing: .16em; line-height: 1.5; padding: 9px 0; } }
+@media (max-width: 1100px) {
+  .skills { left: 50%; right: auto; bottom: 232px; transform: translateX(-50%); width: min(92vw, 760px); max-width: none; text-align: center; }
+  .skills li { display: inline; font-size: 11px; letter-spacing: .14em; line-height: 2.1; padding: 0; }
+  .skills li:not(:last-child)::after { content: '·'; margin: 0 .7em; color: var(--grey); }
+  [data-view="intro"] .scene { padding: 120px 0 310px; } [data-view="intro"] .scene svg { height: max(120px, calc(100dvh - 450px)); }
+}
 @media (max-width: 900px) {
-  header { padding: 18px 20px 0; } .mark span, .mark b, .meter, #trailer, .about-chip, .skills { display: none; }
+  header { padding: 18px 20px 0; } .mark span, .mark b, .meter, #trailer, .about-chip { display: none; }
   .scene { padding-bottom: 24vh; } .hand { font-size: 36px; } .hand.small { font-size: 28px; } .group { font-size: 30px; }
   .story { left: 20px; bottom: 214px; max-width: 56vw; } .more { right: 20px; bottom: 214px; } .more a { display: none; } #notes, .ticks { display: none; }
   :not([data-view="intro"]) > .scene { padding-bottom: 30vh; } :not([data-view="intro"]) > .scene svg { height: min(46vh, 520px); }
-  .narration { bottom: 92px; } [data-view="intro"] .narration { bottom: 190px; }
+  .narration { bottom: 92px; } [data-view="intro"] .narration { bottom: 190px; } .skills { bottom: 262px; } [data-view="intro"] .scene { padding: 130px 0 400px; } [data-view="intro"] .scene svg { height: max(120px, calc(100dvh - 540px)); }
   .dock { bottom: 22px; gap: 8px; padding: 7px 10px; } .ticks { gap: 5px; } .ticks div { gap: 2px; } .ticks a { width: 5px; } .ticks a[aria-current] { width: 12px; }
   .start { flex-direction: column; width: calc(100% - 40px); } .skip { right: 14px; bottom: 8px; }
   .sheet, .sheet.about { right: 12px; left: 12px; width: auto; top: 70px; }
