@@ -3,7 +3,7 @@
 const hook = (question, see, act, notes, scene) => ({ question, see, act, notes, scene });
 
 export const groups = Object.freeze([
-  { name: 'Agents', ids: ['thursday', 'thursday-v3', 'thursday-original'] },
+  { name: 'Agents', ids: ['thursday'] },
   { name: 'Knowledge and products', ids: ['agentic-rag', 'finance', 'invoice', 'llm-gui'] },
   { name: 'Model internals', ids: ['llm-view', 'tensor-tree', 'quantization', 'tokenization', 'automl'] },
   { name: 'Data and vision', ids: ['pollution', 'image-privacy', 'irrigation', 'gpu-hud'] },
@@ -13,15 +13,9 @@ export const order = Object.freeze(groups.flatMap(group => group.ids));
 export const featured = Object.freeze(['thursday', 'agentic-rag', 'finance', 'llm-view']);
 
 export const hooks = Object.freeze({
-  'thursday': hook('Tired of staring at a screen, clicking the same things for hours?',
-    'Thursday V2 looks at the screen for you.', 'It finds the exact spot, and clicks.',
-    ['it reads the screen', 'finds the button, clicks it for you'], 'screen'),
-  'thursday-v3': hook('Ever wished you could run your computer from your phone, just by talking?',
-    'You speak. A fast voice agent hands the job to a main agent.', 'Before a risky step, it asks you first.',
-    ['say it once', 'it asks before risky steps'], 'voice'),
-  'thursday-original': hook('Would you trust an AI agent with your files if you could not see what it did?',
-    'Thursday works in a contained workspace, through one set of tools.', 'Every step it takes is logged, so the trail can be read.',
-    ['one controlled toolbox', 'every step leaves a trail'], 'tools'),
+  'thursday': hook('Tired of clicking through the same screens, hour after hour?',
+    'Thursday reads every line on the screen and finds every button, with its exact position.', 'An LLM picks the next step, a tool clicks the exact spot, then Thursday looks again.',
+    ['reads the text, finds every button', 'clicks the exact spot, looks again'], 'screen'),
   'agentic-rag': hook('Ever got an answer from AI and wondered where it came from?',
     'Each document is kept whole, then broken into pieces that can be found.', 'Every answer keeps a path back to its source.',
     ['documents become findable pieces', 'the answer points back to its source'], 'docs'),
@@ -63,7 +57,5 @@ export const hooks = Object.freeze({
     ['every GPU at a glance', 'a missing sensor will not break it'], 'hud'),
 });
 
-// Thursday V2 has no step list in the catalogue; these five follow its reviewed description.
-export const detailSteps = Object.freeze({
-  'thursday': ['Speech becomes text.', 'The LLM decides what to do next.', 'A tool captures the current screen.', 'OCR finds each element and its pixel coordinates.', 'Mouse or keyboard input acts on the monitor, and the loop repeats.'],
-});
+// Walkthrough steps for projects whose catalogue steps do not suit the ring view; none at present.
+export const detailSteps = Object.freeze({});

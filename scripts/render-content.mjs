@@ -10,7 +10,7 @@ const ticks = groups.map(group => `<div>${group.ids.map(id => `<a href="#${id}" 
 const sourceLink = p => p.repository ? `<a href="${p.repository}" target="_blank" rel="noopener noreferrer">View source on GitHub</a>` : '<span class="private">Private project or source unavailable</span>';
 const stories = groups.flatMap(group => group.ids).map(id => byId[id]).map(p => `<article id="story-${p.id}" tabindex="-1"><p class="kicker">${escape(hooks[p.id].question)}</p><h2>${escape(p.name)}</h2><p class="lead">${escape(p.title)}</p>
 <h3>The problem</h3><p>${escape(p.problem)}</p><h3>The approach</h3><p>${escape(p.approach)}</p><h3>Skills in practice</h3><p>${p.skills.map(escape).join(' · ')}</p>
-<h3>How it works</h3>${p.steps.length ? `<ol>${p.steps.map(s => `<li>${escape(s)}</li>`).join('')}</ol>` : '<p>Voice, transcription, LLM, capture, OCR coordinates, decision, mouse or keyboard input, then a fresh capture.</p>'}
+<h3>How it works</h3><ol>${p.steps.map(s => `<li>${escape(s)}</li>`).join('')}</ol>
 <p class="fine">${escape(p.source)} Built independently by Mugil. ${escape(p.limit)} Drawings are schematic explanations, not recordings of a live run.</p><p class="actions">${sourceLink(p)}<a href="#${p.id}">Watch this episode</a></p></article>`).join('\n');
 
 const about = `<p class="hand big">Physics, AI <em>and some creativity.</em></p>
@@ -42,7 +42,7 @@ const html = `<!doctype html>
   <ul class="skills" aria-label="Technical skills">${skills.map((skill, i) => `<li style="--i:${i}">${escape(skill)}</li>`).join('')}</ul>
   <button class="skip" id="skip">Skip intro</button>
   <div class="dock glass"><button id="previous" aria-label="Previous episode">◀</button><button class="play" id="play" aria-label="Pause">❚❚</button><button id="next" aria-label="Next episode">▶</button><div class="meter" aria-hidden="true"><i></i></div><div class="ticks" id="ticks">${ticks}</div></div>
-  <div class="more"><button class="detail glass" id="detail">See how it works</button><a id="story-link" href="#read">Read the full story</a><a id="source-link" target="_blank" rel="noopener noreferrer" hidden>View source</a></div>
+  <div class="more"><button class="detail glass" id="detail">Detailed view</button><a id="story-link" href="#read">Read the full story</a><a id="source-link" target="_blank" rel="noopener noreferrer" hidden>View source</a></div>
   <aside class="sheet glass" id="sheet" aria-label="Navigation"><h2>Navigation</h2><nav>${list}</nav></aside>
   <aside class="sheet glass about" id="about" aria-label="About Mugil"><h2>About me</h2>${about}<button class="chip glass" data-close>Close</button></aside>
 </div>

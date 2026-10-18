@@ -13,21 +13,9 @@ const scenes = {
     <rect class="scan" x="402" y="152" width="396" height="30" style="--travel:226px"/>
     <rect class="d1" style="--n:1" x="421" y="197" width="52" height="52" rx="6"/><rect class="d1" style="--n:2" x="645" y="197" width="124" height="48" rx="6"/><rect class="d1" style="--n:3" x="421" y="261" width="348" height="48" rx="6"/>
     <rect class="f2 solid" x="652" y="204" width="110" height="34" rx="17"/><circle class="rip" cx="706" cy="216" r="16"/>
-    <path class="m2 solid edge" style="--fx:560px;--fy:380px;--tx:706px;--ty:220px" d="M0 0v22l6-5 4 10 4-2-4-9h8z"/>`,
-  voice: `
-    <rect class="d0" x="420" y="180" width="110" height="220" rx="18" stroke-width="1.8"/><path class="d0" d="M460 196h30"/>
-    <path class="f0" d="M451 300v-20m12 34v-48m12 40v-32m12 44v-56m12 38v-20"/>
-    <path class="d1" style="--n:1" d="M546 262q16 28 0 56M562 248q26 42 0 84"/>
-    <circle class="d1" style="--n:2" cx="630" cy="290" r="24"/><path class="d1" style="--n:3" d="M654 290h40m-9-8 9 8-9 8"/>
-    <circle class="d1" style="--n:4" cx="740" cy="290" r="38" stroke-width="1.8"/>
-    <path class="d2" d="M706 196h68a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10h-24l-10 12v-12h-24a10 10 0 0 1-10-10v-22a10 10 0 0 1 10-10z"/>${hand(740, 226, 'ok?', 'f2', 'middle')}
-    <path class="d2" style="--n:3" d="M726 372l10 10 18-22"/><rect class="d2" style="--n:4" x="704" y="400" width="22" height="22" rx="5"/><rect class="d2" style="--n:5" x="734" y="400" width="22" height="22" rx="5"/><rect class="d2" style="--n:6" x="764" y="400" width="22" height="22" rx="5"/>`,
-  tools: `
-    <rect class="d0" x="410" y="170" width="250" height="190" rx="12" stroke-width="1.8"/>
-    <g class="f0 thin"><path d="M410 200h250M430 230l10 8-10 8M452 246h70M430 270l10 8-10 8M452 286h120M430 310l10 8-10 8M452 326h50"/></g>
-    <rect class="d1" style="--n:1" x="700" y="180" width="90" height="170" rx="14"/>
-    <path class="d1" style="--n:2" d="M728 206h24l10 10v30h-34z"/><path class="d1" style="--n:3" d="M726 290l12 10-12 10M744 312h22"/>
-    <path class="d2" d="M410 410h380"/><g class="solid">${[0, 1, 2, 3, 4, 5].map(i => `<circle class="f2" style="--n:${i + 1}" cx="${430 + i * 68}" cy="410" r="6"/>`).join('')}</g>`,
+    <path class="m2 solid edge" style="--fx:560px;--fy:380px;--tx:706px;--ty:220px" d="M0 0v22l6-5 4 10 4-2-4-9h8z"/>
+    <text class="tiny f1" style="--n:2" x="421" y="190">52, 40</text><text class="tiny f1" style="--n:3" x="645" y="190">1310, 42</text>
+    <path class="d2" style="--n:5" d="M680 470C740 500 700 532 600 532S462 500 520 470"/><path class="d2" style="--n:6" d="M509 468l11 2-6 10"/>`,
   docs: `
     <rect class="d0" x="420" y="165" width="150" height="205" rx="8" stroke-width="1.8"/>
     <g class="f0 thin"><path d="M440 195h110M440 217h110M440 239h80M440 283h110M440 305h110M440 327h60"/></g>

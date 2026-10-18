@@ -9,11 +9,11 @@ Web. Browser-native HTML, CSS and JavaScript modules with inline SVG drawings. A
 | Visitor | What they need |
 | --- | --- |
 | Recruiter with a minute or two | A first impression of who Mugil is, the skills on offer, and one clear idea per project without effort |
-| Technical reviewer | The mechanism step by step, the written story, the source, and Mugil's background |
+| Technical reviewer | The system step by step in a Detailed view, the written story, the source, and Mugil's background |
 
 ## Purpose
 
-Present Mugil Sivasamy Kalamani, whose background is physics and artificial intelligence, through 16 projects told as a self-playing series.
+Present Mugil Sivasamy Kalamani, whose background is physics and artificial intelligence, through 14 projects told as a self-playing series.
 
 ## Principles
 

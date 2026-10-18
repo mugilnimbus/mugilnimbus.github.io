@@ -12,7 +12,7 @@ Trailer (four projects, about a minute)   or   Episode 1   or   any star
 Episode: question -> one object -> beat one -> beat two -> project line
         |                                   |
         v                                   v
-Next episode plays by itself        See how it works / Read the full story / View source
+Next episode plays by itself        Detailed view / Read the full story / View source
 ```
 
 ## One episode
@@ -29,12 +29,12 @@ Next episode plays by itself        See how it works / Read the full story / Vie
 
 | Group | Episodes |
 | --- | --- |
-| Agents | Thursday V2, Thursday V3, Thursday |
+| Agents | Thursday |
 | Knowledge and products | Nimbus Agentic RAG, Nimbus Finance, Invoice-to-Stock, LLM GUI |
 | Model internals | LLM View 3D, GenAI Tensor Tree, Model Inspection & Quantization, Contextual Tokenization, Deep Neural Networks AutoML |
 | Data and vision | Dublin Pollution Forecasting, Image PII Detection & Masking, CNN Irrigation Automation, GPU HUD |
 
-The trailer features Thursday V2, Nimbus Agentic RAG, Nimbus Finance and LLM View 3D.
+The trailer features Thursday, Nimbus Agentic RAG, Nimbus Finance and LLM View 3D.
 
 ## Around the series
 
@@ -42,5 +42,12 @@ The trailer features Thursday V2, Nimbus Agentic RAG, Nimbus Finance and LLM Vie
 | --- | --- | --- |
 | Star names | Intro | Hovering a star writes its project name |
 | Skills list | Intro, bottom right | Six skill areas, shown with the closing line |
-| Navigation | Header, every view | Intro, 16 episodes by group, About me |
+| Navigation | Header, every view | Intro, 14 episodes by group, About me |
 | About me | Navigation, header and `#about` | Physics, AI, creativity, education, publications, tools, links |
+
+## Detailed view: Thursday
+
+| Chapter | Steps |
+| --- | --- |
+| Computer control | Task, capture, line OCR, OmniParser, LLM, action and target, grounding, act, look again, reply or ask |
+| Voice agent (In progress) | Phone, voice model, answer or delegate, A2A to the main agent, permission by voice, spoken yes, result spoken back |

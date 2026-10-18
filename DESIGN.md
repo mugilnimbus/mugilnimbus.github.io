@@ -53,7 +53,7 @@ Transitions use one easing curve, `cubic-bezier(.2,.7,.2,1)`. Reduced motion rem
 
 - **Intro.** Greeting written with a drawn underline; a handwritten sum, physics + AI, with "+ some creativity" inserted above by a caret; an equals sign answered by one point; four constellations of project stars that are links, each writing its project name above itself on hover or keyboard focus while its group label dims; a skills list that fades in line by line with the closing line.
 - **Episode.** Question, object, two beats with two notes, project line. The detail button turns white at the closing line.
-- **Walkthrough.** A ring with one numbered stop per step, a bright arc tracing progress, the step name written beside its stop, and the step count in the centre.
+- **Detailed view.** For a project with its own walkthrough: the system as boxes and wires in one chapter per mode, the chapter name and step count at the top, an In progress badge for an unfinished mode, earlier parts dimmed, the current step white, and moving dashes on the wires carrying data. On phones the drawing pans sideways to the current step. Otherwise, a ring with one numbered stop per step, a bright arc tracing progress, the step name written beside its stop, and the step count in the centre.
 - **Navigation.** A glass panel listing the intro, every episode numbered under its group, and About me last.
 - **About me.** A wider glass panel: handwritten tagline, a short introduction, then physics, AI, creativity, education, publications, tools and links.
 - **Full stories.** Plain reading column over the stage, one article per project, ending with About me.

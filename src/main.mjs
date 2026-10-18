@@ -1,6 +1,7 @@
 import { projects } from './projects.mjs';
 import { hooks, groups, order, featured, detailSteps } from './hooks.mjs';
 import { hookScene, detailScene } from './scenes.mjs';
+import { walkthroughs, chapterHeader } from './walkthroughs.mjs';
 import { introPlan, episodePlan, detailPlan, beatAt, progressAt } from './timeline.mjs';
 
 const byId = Object.fromEntries(projects.map(project => [project.id, project]));
@@ -12,6 +13,7 @@ const introLine = 'I build AI and software systems.';
 const introCaptions = ['Physics, AI and some creativity.', 'Each project starts with a problem you may have felt.', 'Ideas, made tangible.'];
 const states = ['named', 'lined', 'strands', 'burst', 'close', 'titled', 'asking', 'docked', 'built', 'see', 'act', 'proof'];
 let view = 'intro', current = order[0], plan = null, elapsed = 0, shown = -2, playing = !still.matches, trailer = -1, last = performance.now();
+let chapterShown = -1, focus = null;
 
 // Words arrive one at a time, at reading pace; the whole sentence stays available to assistive technology.
 function spans(text) {
@@ -37,12 +39,15 @@ function draw(markup, noteMarkup = '') {
 }
 // On a narrow screen the drawing is cropped to the object, so it stays large enough to read.
 function fit() {
-  const narrow = innerWidth < 900;
-  $('#stage').setAttribute('viewBox', !narrow ? '0 0 1200 600' : view === 'intro' ? '160 70 880 480' : view === 'detail' ? '250 30 700 540' : '380 120 440 350');
+  const narrow = innerWidth < 900, walk = view === 'detail' && plan?.walk;
+  $('#stage').setAttribute('viewBox', !narrow ? '0 0 1200 600' : view === 'intro' ? '160 70 880 480' : walk ? '300 20 600 560' : view === 'detail' ? '250 30 700 540' : '380 120 440 350');
+  // A walkthrough is wider than a phone, so on narrow screens it pans sideways to the part the current step is about.
+  const pan = object.querySelector('.pan');
+  if (pan) pan.style.transform = narrow && focus ? `translate(${600 - focus[0]}px, 0)` : '';
 }
 addEventListener('resize', fit);
 function reset(next) {
-  view = next; elapsed = 0; shown = -2; frame.dataset.view = next; fit();
+  view = next; elapsed = 0; shown = -2; chapterShown = -1; focus = null; frame.dataset.view = next; fit();
   frame.classList.remove(...states); say('');
 }
 
@@ -77,7 +82,7 @@ function showEpisode(id, asTrailer = false) {
   $('#tag').textContent = `${asTrailer ? 'Trailer' : 'Episode'} ${String(number).padStart(2, '0')} / ${order.length}  ·  ${group.name}`;
   $('#story-link').href = `#story-${id}`;
   const source = $('#source-link'); source.hidden = !project.repository; if (project.repository) source.href = project.repository;
-  detailButton.textContent = 'See how it works';
+  detailButton.textContent = 'Detailed view';
   document.querySelectorAll('[data-episode]').forEach(link => link.toggleAttribute('aria-current', link.dataset.episode === id));
   plan = episodePlan(hook, project.title, asTrailer);
   if (still.matches) elapsed = plan.end - .1;
@@ -86,11 +91,11 @@ function showEpisode(id, asTrailer = false) {
   render();
 }
 function showDetail(id) {
-  const project = byId[id], steps = detailSteps[id] ?? project.steps;
+  const project = byId[id], walk = walkthroughs[id], steps = walk ? walk.chapters.flatMap(chapter => chapter.steps) : detailSteps[id] ?? project.steps;
   reset('detail'); trailer = -1; frame.classList.add('titled', 'docked');
-  draw(detailScene(project.nodes.slice(0, steps.length)));
-  detailButton.textContent = 'Back to the story';
-  plan = { ...detailPlan(steps), steps };
+  if (!walk) draw(detailScene(project.nodes.slice(0, steps.length)));
+  detailButton.textContent = 'Simple view';
+  plan = { ...detailPlan(steps), steps, walk };
   if (still.matches) elapsed = plan.end - .1;
   render();
 }
@@ -108,6 +113,9 @@ function render() {
     frame.classList.toggle('docked', t >= plan.dock); frame.classList.toggle('built', t >= plan.build);
     ['see', 'act', 'proof'].forEach((name, i) => frame.classList.toggle(name, i <= beat));
     if (beat !== shown) { shown = beat; say([hook.see, hook.act, byId[current].title][beat] ?? '', beat === 2); }
+  } else if (plan.walk) {
+    frame.classList.toggle('built', t >= plan.build);
+    if (beat !== shown) { shown = beat; walkTo(beat); say(plan.steps[beat] ?? ''); }
   } else {
     frame.classList.toggle('built', t >= plan.build);
     if (beat !== shown) {
@@ -118,6 +126,25 @@ function render() {
     }
   }
   frame.style.setProperty('--done', plan ? progressAt(plan, t) : 0);
+}
+// Show one step of a walkthrough: draw its chapter if it changed, then light the parts that step is about.
+function walkTo(beat) {
+  let chapter = 0, local = beat;
+  while (chapter < plan.walk.chapters.length - 1 && local >= plan.walk.chapters[chapter].steps.length) local -= plan.walk.chapters[chapter++].steps.length;
+  const shownChapter = plan.walk.chapters[chapter];
+  if (chapter !== chapterShown) {
+    chapterShown = chapter;
+    draw(`<g class="walk"><g class="pan">${shownChapter.markup}</g>${chapterHeader(shownChapter)}</g>`);
+    object.querySelectorAll('.ln').forEach(part => part.setAttribute('pathLength', 1));
+  }
+  const step = String(local);
+  object.querySelectorAll('[data-at]').forEach(part => {
+    const at = Number(part.dataset.at), now = at === local || (part.dataset.lit ?? '').split(' ').includes(step);
+    part.classList.toggle('shown', at <= local); part.classList.toggle('now', now); part.classList.toggle('past', at < local && !now);
+  });
+  object.querySelectorAll('[data-flow]').forEach(wire => wire.classList.toggle('flowing', wire.dataset.flow.split(' ').includes(step)));
+  object.querySelector('.tally').textContent = local < 0 ? '' : `${local + 1} / ${shownChapter.steps.length}`;
+  focus = shownChapter.focus[Math.max(local, 0)]; fit();
 }
 function finished() {
   if (view === 'intro') { elapsed = plan.end; return; }
