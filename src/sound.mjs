@@ -1,5 +1,5 @@
 // Narration clips made by the local voice model, and a quiet ambient pad made live with Web Audio.
-import { voiceKey } from './narration.mjs';
+import { voiceKey, voiced } from './narration.mjs';
 
 let clips = null;
 const voice = new Audio();
@@ -13,11 +13,11 @@ export async function loadVoice() {
   return Boolean(clips);
 }
 // Length of a line's clip in seconds, or 0 when there is none.
-export const clipSeconds = text => clips?.[voiceKey(text)]?.seconds ?? 0;
+export const clipSeconds = text => clips?.[voiceKey(voiced(text))]?.seconds ?? 0;
 
 // Start a line's clip `offset` seconds in; resolves false when the browser refuses to play sound yet.
 export async function speak(text, offset = 0) {
-  const clip = clips?.[voiceKey(text)];
+  const clip = clips?.[voiceKey(voiced(text))];
   if (!clip || offset >= clip.seconds) { voice.pause(); return true; }
   const src = new URL(`../assets/voice/${clip.file}`, import.meta.url).href;
   if (voice.src !== src) voice.src = src;

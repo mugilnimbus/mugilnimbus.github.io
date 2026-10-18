@@ -1,12 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { narratedLines, spoken, voiceKey } from '../src/narration.mjs';
+import { narratedLines, spoken, voiceKey, voiced, greeting, introCaptions } from '../src/narration.mjs';
 
 test('every narrated line has its own clip key and a pronunciation the voice can read', () => {
   const lines = narratedLines();
   assert.equal(new Set(lines.map(voiceKey)).size, lines.length, 'no two lines share a clip');
   assert.equal(spoken("Hi, I'm Mugil."), "Hi, I'm [Mugil](/mˈuɡɪl/).");
+  assert.notEqual(voiced(greeting), greeting, 'the intro speaks in its own words');
+  assert.ok(introCaptions.every(caption => narratedLines().includes(voiced(caption))));
   assert.equal(spoken('through A2A to saturn_query'), 'through A to A to saturn query');
 });
 test('the generated clips cover every narrated line', async () => {

@@ -1,38 +1,38 @@
 {
  "voice": "af_heart",
  "lines": {
-  "57297547": {
-   "file": "57297547.mp3",
-   "seconds": 0.85,
-   "spoken": "Hi, I'm [Mugil](/mˈuɡɪl/).",
+  "e7cb6f75": {
+   "file": "e7cb6f75.mp3",
+   "seconds": 1.13,
+   "spoken": "Hey there! I’m [Mugil](/mˈuɡɪl/).",
    "voice": "af_heart",
    "speed": 1
   },
-  "ca41a2a0": {
-   "file": "ca41a2a0.mp3",
-   "seconds": 2.08,
-   "spoken": "I build AI and software systems.",
+  "79ee6eae": {
+   "file": "79ee6eae.mp3",
+   "seconds": 3.85,
+   "spoken": "I build AI systems… and I’d love to show you how they actually work.",
    "voice": "af_heart",
    "speed": 1
   },
-  "5e834a4b": {
-   "file": "5e834a4b.mp3",
-   "seconds": 2.08,
-   "spoken": "Physics, AI and some creativity.",
+  "0915f731": {
+   "file": "0915f731.mp3",
+   "seconds": 4.27,
+   "spoken": "Physics, plus AI… plus a little creativity. That’s my whole recipe.",
    "voice": "af_heart",
    "speed": 1
   },
-  "8f6716cb": {
-   "file": "8f6716cb.mp3",
-   "seconds": 2.54,
-   "spoken": "Each project starts with a problem you may have felt.",
+  "e83e63fe": {
+   "file": "e83e63fe.mp3",
+   "seconds": 5.05,
+   "spoken": "See those stars? Each one is a project. Go on, pick one, and it’ll tell you its story.",
    "voice": "af_heart",
    "speed": 1
   },
-  "a20f6220": {
-   "file": "a20f6220.mp3",
-   "seconds": 1.31,
-   "spoken": "Ideas, made tangible.",
+  "c7d4c0be": {
+   "file": "c7d4c0be.mp3",
+   "seconds": 3.84,
+   "spoken": "Not sure where to start? Just sit back. The trailer is about to begin.",
    "voice": "af_heart",
    "speed": 1
   },

@@ -19,7 +19,9 @@ const soundButton = $('#sound');
 let soundOn = false, cues = [], cueShown = -1, waiting = false;
 try { soundOn = localStorage.getItem('sound') !== 'off'; } catch { soundOn = true; }
 // With sound on, a line lasts as long as its clip, and never less than its reading time.
-const timing = text => soundOn ? Math.max(readingTime(text), clipSeconds(text) + .35) : readingTime(text);
+const timing = text => soundOn ? Math.max(readingTime(text), clipSeconds(text) + .25) : readingTime(text);
+// A voice carries the pace, so the pauses between spoken lines are shorter.
+const gap = () => soundOn && !still.matches ? .35 : 1;
 // Words appear at the pace of the voice reading them.
 function paced(element, text) {
   const seconds = soundOn && text ? clipSeconds(text) : 0;
@@ -80,7 +82,7 @@ function introScene() {
 }
 function showIntro() {
   reset('intro'); trailer = -1; draw(introScene());
-  plan = introPlan(introLine, introCaptions, timing, greeting); paced($('#hello-line'), introLine); $('#hello-line').replaceChildren(...spans(introLine));
+  plan = introPlan(introLine, introCaptions, timing, greeting, gap()); paced($('#hello-line'), introLine); $('#hello-line').replaceChildren(...spans(introLine));
   cues = [[plan.named, greeting], [plan.lined, introLine], ...introCaptions.map((caption, i) => [plan.beats[i], caption])];
   if (still.matches) elapsed = plan.end - 1;
   render();
@@ -96,7 +98,7 @@ function showEpisode(id, asTrailer = false) {
   const source = $('#source-link'); source.hidden = !project.repository; if (project.repository) source.href = project.repository;
   detailButton.textContent = 'Detailed view';
   document.querySelectorAll('[data-episode]').forEach(link => link.toggleAttribute('aria-current', link.dataset.episode === id));
-  plan = episodePlan(hook, project.title, asTrailer, timing);
+  plan = episodePlan(hook, project.title, asTrailer, timing, gap());
   cues = [[plan.ask, hook.question], [plan.beats[0], hook.see], [plan.beats[1], hook.act], [plan.beats[2], project.title]];
   if (still.matches) elapsed = plan.end - .1;
   if (location.hash !== `#${id}`) history.replaceState(null, '', `#${id}`);
@@ -108,7 +110,7 @@ function showDetail(id) {
   reset('detail'); trailer = -1; frame.classList.add('titled', 'docked');
   if (!walk) draw(detailScene(project.nodes.slice(0, steps.length)));
   detailButton.textContent = 'Simple view';
-  plan = { ...detailPlan(steps, timing), steps, walk };
+  plan = { ...detailPlan(steps, timing, gap()), steps, walk };
   cues = steps.map((step, i) => [plan.beats[i], step]);
   if (still.matches) elapsed = plan.end - .1;
   render();
@@ -171,7 +173,8 @@ function walkTo(beat) {
   focus = shownChapter.focus[Math.max(local, 0)]; fit();
 }
 function finished() {
-  if (view === 'intro') { elapsed = plan.end; return; }
+  // A visitor who has not picked anything by the end of the intro is taken into the trailer.
+  if (view === 'intro') { startTrailer(); return; }
   if (view === 'detail') { elapsed = plan.end; setPlaying(false); return; }
   if (trailer >= 0) {
     trailer++;

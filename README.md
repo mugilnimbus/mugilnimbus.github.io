@@ -18,7 +18,7 @@ Open `http://127.0.0.1:5173/`. Node 22 or later is required.
 
 | Part | What the visitor gets |
 | --- | --- |
-| Intro | A handwritten greeting, then a handwritten sum, physics + AI with "some creativity" squeezed in above, whose answer is one point that opens into four constellations of project stars. Hovering a star shows the project's name. A short list of technical skills sits bottom right on wide windows |
+| Intro | A handwritten greeting, then a handwritten sum, physics + AI with "some creativity" squeezed in above, whose answer is one point that opens into four constellations of project stars. Hovering a star shows the project's name. The intro ends by inviting the visitor to pick a star or just watch, and rolls into the trailer if they do nothing. A short list of technical skills sits bottom right on wide windows |
 | Episode | A question, one drawn object, two beats, and the project's line; about half a minute |
 | Trailer | Four featured projects in shortened form, about one minute |
 | Detailed view | The system itself, step by step: parts and wires drawn in order, the current step in white and data moving along the wires. Thursday (computer control, and the voice agent marked In progress) and Saturn MCP (one noisy test run) have their own walkthroughs; other projects use a ring of steps |

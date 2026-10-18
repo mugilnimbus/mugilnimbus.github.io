@@ -25,7 +25,7 @@ test('the trailer is shorter than the full episodes and runs about a minute', ()
   assert.ok(total < full && total > 40 && total < 80, `trailer runs ${total.toFixed(1)}s`);
 });
 test('intro and detail plans are ordered', () => {
-  const intro = introPlan('I build AI and software systems.', ['Physics, AI and some creativity.', 'Each project starts with a problem you may have felt.']);
+  const intro = introPlan('I build AI and software systems.', ['Physics, AI and some creativity.', 'Each star is a project.', 'Or just watch.']);
   assert.ok(intro.named < intro.lined && intro.lined < intro.beats[0] && intro.beats[0] < intro.beats[1] && intro.beats[1] < intro.beats[2] && intro.beats[2] < intro.end);
   const detail = detailPlan(byId['agentic-rag'].steps);
   assert.equal(detail.beats.length, 5); assert.ok(detail.beats.every((at, i) => i === 0 || at > detail.beats[i - 1]));
@@ -34,5 +34,7 @@ test('with sound on, a line waits for its spoken clip but never drops below read
   const hook = hooks.thursday, slow = text => text === hook.see ? 20 : wordCount(text) * pace;
   const quiet = episodePlan(hook, byId.thursday.title), spoken = episodePlan(hook, byId.thursday.title, false, slow);
   assert.ok(spoken.beats[1] - spoken.beats[0] >= 20 && spoken.beats[0] === quiet.beats[0]);
-  assert.ok(introPlan('one two', ['a', 'b'], () => 4, 'Hi').lined > introPlan('one two', ['a', 'b']).lined);
+  assert.ok(introPlan('one two', ['a', 'b', 'c'], () => 4, 'Hi').lined > introPlan('one two', ['a', 'b', 'c']).lined);
+  const quick = episodePlan(hook, byId.thursday.title, false, slow, .35);
+  assert.ok(quick.beats[2] - quick.beats[1] < spoken.beats[2] - spoken.beats[1], 'shorter pauses when a voice carries the pace');
 });

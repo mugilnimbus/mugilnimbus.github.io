@@ -5,14 +5,26 @@ import { walkthroughs } from './walkthroughs.mjs';
 
 export const greeting = "Hi, I'm Mugil.";
 export const introLine = 'I build AI and software systems.';
-export const introCaptions = ['Physics, AI and some creativity.', 'Each project starts with a problem you may have felt.', 'Ideas, made tangible.'];
+// The intro ends by telling the visitor what to do next, then carries on by itself into the trailer.
+export const introCaptions = ['Physics, AI and some creativity.', 'Each star is a project. Pick one, and it tells you its story.', 'Or just watch. The trailer starts in a moment.'];
+
+// The intro voice talks to the visitor in its own words, while the screen keeps the short handwritten lines.
+const introVoice = new Map([
+  [greeting, 'Hey there! I’m Mugil.'],
+  [introLine, 'I build AI systems… and I’d love to show you how they actually work.'],
+  [introCaptions[0], 'Physics, plus AI… plus a little creativity. That’s my whole recipe.'],
+  [introCaptions[1], 'See those stars? Each one is a project. Go on, pick one, and it’ll tell you its story.'],
+  [introCaptions[2], 'Not sure where to start? Just sit back. The trailer is about to begin.'],
+]);
+// The words actually spoken for a line shown on screen.
+export const voiced = text => introVoice.get(text) ?? text;
 
 const byId = Object.fromEntries(projects.map(project => [project.id, project]));
 export const walkSteps = id => walkthroughs[id] ? walkthroughs[id].chapters.flatMap(chapter => chapter.steps) : detailSteps[id] ?? byId[id].steps;
 
 // In the order a visitor meets them: the intro, then each episode followed by its detailed view.
 export function narratedLines() {
-  const lines = [greeting, introLine, ...introCaptions];
+  const lines = [greeting, introLine, ...introCaptions].map(voiced);
   for (const id of order) lines.push(hooks[id].question, hooks[id].see, hooks[id].act, byId[id].title, ...walkSteps(id));
   return [...new Set(lines)];
 }
