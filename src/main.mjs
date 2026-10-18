@@ -1,19 +1,30 @@
 import { projects } from './projects.mjs';
-import { hooks, groups, order, featured, detailSteps } from './hooks.mjs';
+import { hooks, groups, order, featured } from './hooks.mjs';
 import { hookScene, detailScene } from './scenes.mjs';
 import { walkthroughs, chapterHeader } from './walkthroughs.mjs';
-import { introPlan, episodePlan, detailPlan, beatAt, progressAt } from './timeline.mjs';
+import { introPlan, episodePlan, detailPlan, beatAt, progressAt, reading as readingTime, wordCount } from './timeline.mjs';
+import { greeting, introLine, introCaptions, walkSteps } from './narration.mjs';
+import { loadVoice, clipSeconds, speak, hush, startMusic, stopMusic } from './sound.mjs';
 
 const byId = Object.fromEntries(projects.map(project => [project.id, project]));
 const $ = selector => document.querySelector(selector);
 const frame = $('#frame'), object = $('#object'), notes = $('#notes'), line = $('#line'), play = $('#play');
 const sheet = $('#sheet'), about = $('#about'), reading = $('#read'), detailButton = $('#detail');
 const still = matchMedia('(prefers-reduced-motion: reduce)');
-const introLine = 'I build AI and software systems.';
-const introCaptions = ['Physics, AI and some creativity.', 'Each project starts with a problem you may have felt.', 'Ideas, made tangible.'];
 const states = ['named', 'lined', 'strands', 'burst', 'close', 'titled', 'asking', 'docked', 'built', 'see', 'act', 'proof'];
 let view = 'intro', current = order[0], plan = null, elapsed = 0, shown = -2, playing = !still.matches, trailer = -1, last = performance.now();
 let chapterShown = -1, focus = null;
+// Sound is on unless the visitor muted it, which is remembered; each view lists the lines it speaks and when (its cues).
+const soundButton = $('#sound');
+let soundOn = false, cues = [], cueShown = -1, waiting = false;
+try { soundOn = localStorage.getItem('sound') !== 'off'; } catch { soundOn = true; }
+// With sound on, a line lasts as long as its clip, and never less than its reading time.
+const timing = text => soundOn ? Math.max(readingTime(text), clipSeconds(text) + .35) : readingTime(text);
+// Words appear at the pace of the voice reading them.
+function paced(element, text) {
+  const seconds = soundOn && text ? clipSeconds(text) : 0;
+  element.style.setProperty('--step', seconds ? `${Math.min(.45, Math.max(.16, seconds / wordCount(text))).toFixed(3)}s` : '');
+}
 
 // Words arrive one at a time, at reading pace; the whole sentence stays available to assistive technology.
 function spans(text) {
@@ -21,7 +32,7 @@ function spans(text) {
 }
 function say(text, big = false) {
   line.classList.add('out');
-  setTimeout(() => { line.classList.toggle('big', big); line.replaceChildren(...(text ? spans(text) : [])); if (text) line.classList.remove('out'); }, still.matches ? 0 : 320);
+  setTimeout(() => { line.classList.toggle('big', big); paced(line, text); line.replaceChildren(...(text ? spans(text) : [])); if (text) line.classList.remove('out'); }, still.matches ? 0 : 320);
 }
 function wrap(text) {
   if (text.length < 20) return [text];
@@ -47,7 +58,7 @@ function fit() {
 }
 addEventListener('resize', fit);
 function reset(next) {
-  view = next; elapsed = 0; shown = -2; chapterShown = -1; focus = null; frame.dataset.view = next; fit();
+  view = next; elapsed = 0; shown = -2; chapterShown = -1; focus = null; cueShown = -1; hush(); frame.dataset.view = next; fit();
   frame.classList.remove(...states); say('');
 }
 
@@ -69,7 +80,8 @@ function introScene() {
 }
 function showIntro() {
   reset('intro'); trailer = -1; draw(introScene());
-  plan = introPlan(introLine, introCaptions); $('#hello-line').replaceChildren(...spans(introLine));
+  plan = introPlan(introLine, introCaptions, timing, greeting); paced($('#hello-line'), introLine); $('#hello-line').replaceChildren(...spans(introLine));
+  cues = [[plan.named, greeting], [plan.lined, introLine], ...introCaptions.map((caption, i) => [plan.beats[i], caption])];
   if (still.matches) elapsed = plan.end - 1;
   render();
 }
@@ -77,25 +89,27 @@ function showEpisode(id, asTrailer = false) {
   const project = byId[id], hook = hooks[id], number = order.indexOf(id) + 1, group = groups.find(entry => entry.ids.includes(id));
   reset('episode'); current = id; if (!asTrailer) trailer = -1;
   draw(hookScene(hook.scene), hook.notes.map(note).join(''));
-  $('#ask').replaceChildren(...spans(hook.question));
+  paced($('#ask'), hook.question); $('#ask').replaceChildren(...spans(hook.question));
   $('#title span').textContent = project.name;
   $('#tag').textContent = `${asTrailer ? 'Trailer' : 'Episode'} ${String(number).padStart(2, '0')} / ${order.length}  ·  ${group.name}`;
   $('#story-link').href = `#story-${id}`;
   const source = $('#source-link'); source.hidden = !project.repository; if (project.repository) source.href = project.repository;
   detailButton.textContent = 'Detailed view';
   document.querySelectorAll('[data-episode]').forEach(link => link.toggleAttribute('aria-current', link.dataset.episode === id));
-  plan = episodePlan(hook, project.title, asTrailer);
+  plan = episodePlan(hook, project.title, asTrailer, timing);
+  cues = [[plan.ask, hook.question], [plan.beats[0], hook.see], [plan.beats[1], hook.act], [plan.beats[2], project.title]];
   if (still.matches) elapsed = plan.end - .1;
   if (location.hash !== `#${id}`) history.replaceState(null, '', `#${id}`);
   document.title = `${project.name} — Mugil`;
   render();
 }
 function showDetail(id) {
-  const project = byId[id], walk = walkthroughs[id], steps = walk ? walk.chapters.flatMap(chapter => chapter.steps) : detailSteps[id] ?? project.steps;
+  const project = byId[id], walk = walkthroughs[id], steps = walkSteps(id);
   reset('detail'); trailer = -1; frame.classList.add('titled', 'docked');
   if (!walk) draw(detailScene(project.nodes.slice(0, steps.length)));
   detailButton.textContent = 'Simple view';
-  plan = { ...detailPlan(steps), steps, walk };
+  plan = { ...detailPlan(steps, timing), steps, walk };
+  cues = steps.map((step, i) => [plan.beats[i], step]);
   if (still.matches) elapsed = plan.end - .1;
   render();
 }
@@ -126,6 +140,16 @@ function render() {
     }
   }
   frame.style.setProperty('--done', plan ? progressAt(plan, t) : 0);
+  if (soundOn && playing && !still.matches) voiceCue(t);
+}
+// Speak the line whose cue was passed last, starting as far into its clip as the clock is.
+function voiceCue(t) {
+  const index = cues.findLastIndex(([at]) => t >= at);
+  if (index === cueShown) return;
+  cueShown = index;
+  if (index < 0) { hush(); return; }
+  const [at, text] = cues[index];
+  speak(text, t - at).then(played => { if (!played && soundOn) { waiting = true; showSound(); } });
 }
 // Show one step of a walkthrough: draw its chapter if it changed, then light the parts that step is about.
 function walkTo(beat) {
@@ -165,7 +189,9 @@ function tick(now) {
   last = now; requestAnimationFrame(tick);
 }
 function setPlaying(value) {
-  playing = value; play.textContent = playing ? '❚❚' : '▶'; play.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+  playing = value; cueShown = -1;
+  if (!playing) hush();
+  if (soundOn) playing ? startMusic() : stopMusic(); play.textContent = playing ? '❚❚' : '▶'; play.setAttribute('aria-label', playing ? 'Pause' : 'Play');
 }
 function step(direction) { showEpisode(order[(order.indexOf(current) + direction + order.length) % order.length]); setPlaying(!still.matches); }
 function startTrailer() { closeAll(); trailer = 0; setPlaying(!still.matches); showEpisode(featured[0], true); }
@@ -190,7 +216,7 @@ function route() {
 addEventListener('hashchange', route);
 addEventListener('resize', fit);
 play.addEventListener('click', () => {
-  if (plan && elapsed >= plan.end - .2) { elapsed = 0; shown = -2; frame.classList.remove(...states); if (view === 'detail') frame.classList.add('titled', 'docked'); setPlaying(true); return; }
+  if (plan && elapsed >= plan.end - .2) { elapsed = 0; shown = -2; cueShown = -1; frame.classList.remove(...states); if (view === 'detail') frame.classList.add('titled', 'docked'); setPlaying(true); return; }
   setPlaying(!playing);
 });
 $('#next').addEventListener('click', () => step(1));
@@ -199,7 +225,34 @@ $('#all').addEventListener('click', () => { const open = !sheet.classList.contai
 $('#trailer').addEventListener('click', startTrailer);
 $('#start-trailer').addEventListener('click', startTrailer);
 $('#start-first').addEventListener('click', () => { location.hash = order[0]; });
-$('#skip').addEventListener('click', () => { elapsed = plan.beats[2]; shown = -2; render(); });
+$('#skip').addEventListener('click', () => { elapsed = plan.beats[2]; shown = -2; cueShown = -1; render(); });
+// The header button mutes or unmutes. Unmuting replays the current view from its start, so every line is heard.
+function showSound() {
+  soundButton.setAttribute('aria-pressed', String(!soundOn)); soundButton.classList.toggle('waiting', waiting);
+  soundButton.textContent = !soundOn ? 'Unmute' : waiting ? 'Tap for sound' : 'Mute';
+}
+function replayView() {
+  if (view === 'intro') showIntro(); else if (view === 'detail') showDetail(current); else showEpisode(current, trailer >= 0);
+  setPlaying(!still.matches);
+}
+// Browsers play sound only after the visitor clicks or presses a key; the first one starts it, and the intro starts over.
+function unlock() {
+  waiting = false; showSound();
+  if (view === 'intro') replayView(); else { cueShown = -1; if (playing) startMusic(); }
+}
+soundButton.addEventListener('click', () => {
+  if (waiting) { unlock(); return; }
+  soundOn = !soundOn;
+  try { localStorage.setItem('sound', soundOn ? 'on' : 'off'); } catch { /* not remembered */ }
+  showSound();
+  if (!soundOn) { hush(); stopMusic(); return; }
+  replayView();
+});
+for (const type of ['pointerdown', 'keydown']) addEventListener(type, event => { if (waiting && event.target !== soundButton) unlock(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { hush(); stopMusic(); }
+  else if (soundOn && playing) { cueShown = -1; startMusic(); }
+});
 detailButton.addEventListener('click', () => { setPlaying(!still.matches); if (view === 'detail') showEpisode(current); else showDetail(current); });
 document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => {
   history.replaceState(null, '', view === 'intro' ? '#intro' : `#${current}`); closeAll();
@@ -224,8 +277,11 @@ for (let i = 0; i < 46; i++) {
   dust.append(speck);
 }
 document.documentElement.classList.add('ready');
+showSound();
 setPlaying(playing);
 route();
+// Clip lengths arrive after the first view starts; with sound remembered as on, replay that view with them.
+loadVoice().then(ready => { if (ready && soundOn && !still.matches) { if (view === 'intro') showIntro(); else if (view === 'detail') showDetail(current); else showEpisode(current); } });
 // A link may open a moment of an episode or its walkthrough, paused: for example ?at=12#thursday or ?detail&at=9#thursday.
 const query = new URLSearchParams(location.search), moment = Number(query.get('at'));
 if (query.has('detail') && byId[location.hash.slice(1)]) showDetail(current);

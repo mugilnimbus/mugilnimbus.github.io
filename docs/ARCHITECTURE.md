@@ -11,6 +11,7 @@ The [architecture model](https://mugilnimbus.github.io/docs/architecture.html) r
 | Catalogue and hooks | `src/projects.mjs` holds reviewed project facts; `src/hooks.mjs` holds each episode's hook, the groups, the order and the trailer selection |
 | Scene library | `src/scenes.mjs` supplies the line drawing for each hook and the ring diagram for projects without their own walkthrough |
 | System walkthroughs | `src/walkthroughs.mjs` supplies a project's Detailed view: chapters of parts and wires, each part tied to the step it appears at |
+| Narration and sound | `src/narration.mjs` lists every spoken line and its pronunciation; `scripts/voice.mjs` with `tools/voice/generate.py` makes the clips in `assets/voice/`; `src/sound.mjs` plays them and synthesises the music |
 | Page generator | `scripts/render-content.mjs` writes `index.html`: the header, the Navigation list, the About me text, the skills list and every full story as static text |
 | Static host | `scripts/server.mjs` serves an allowlist of public paths on 127.0.0.1; `scripts/build.mjs` packages `dist/` |
 

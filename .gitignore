@@ -3,3 +3,5 @@
 /node_modules/
 /dist/
 /.projects/
+/tools/voice/.venv/
+/tools/voice/.cache/

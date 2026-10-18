@@ -34,6 +34,14 @@ Windows shows Ink Free. Devices without it load Shadows Into Light from `assets/
 - Intro: skills list bottom right, right-aligned, on windows at least 1560px wide.
 - Under 900px the drawing is cropped to the object, side notes and ticks are hidden, and the title and actions move above the narration.
 
+## Sound
+
+| Part | Rule |
+| --- | --- |
+| Sound chip | In the header on every view; reads Mute, or Unmute in grey once muted; reads Tap for sound and pulses gently while a browser waits for a first click before it may play sound |
+| Voice | One natural voice (Kokoro, af_heart) reads each line as its words appear; words appear at the voice's pace |
+| Music | Two soft chords trading places every 11 seconds, low-pass filtered, far below the voice and lower still while a line is spoken |
+
 ## Motion
 
 Every movement carries meaning.

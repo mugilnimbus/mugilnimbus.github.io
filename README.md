@@ -26,6 +26,7 @@ Open `http://127.0.0.1:5173/`. Node 22 or later is required.
 | Switching | Previous, Next, a tick for every episode, or any star in the intro |
 | Navigation | A panel in the header on every view: the intro, all 15 episodes by group, and About me |
 | About me | Background in physics and AI, education, publications, tools and contact links |
+| Sound | On when the site opens, with a Mute button in the header that is remembered across reloads. A natural voice reads every line from "Hi, I'm Mugil." onward, in step with the words, over quiet ambient music; each line lasts as long as its clip. Browsers hold sound until the first click or key press, so the button reads Tap for sound until then |
 
 Keyboard: left and right change episode, space pauses, escape closes a panel. With reduced motion, nothing plays by itself and each view is shown complete. Without scripts, the full stories are shown as an ordinary page.
 
@@ -48,7 +49,21 @@ Keyboard: left and right change episode, space pauses, escape closes a panel. Wi
 | `npm.cmd run check` | Module syntax, HTML identifiers and links |
 | `npm.cmd test` | Catalogue, hooks, scenes, timing and server allowlist tests |
 | `node docs/architecture/viewer/check.mjs` | Architecture model check |
+| `node scripts/voice.mjs` | Make voice clips for new or changed narrated lines (local Kokoro voice) |
 | `npm.cmd run build` | Package the public site into `dist/` |
+
+## Voice
+
+Narration is pre-generated on this computer with [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), an open (Apache 2.0) text-to-speech model, using the `af_heart` voice. The clips live in `assets/voice/` with a manifest of their lengths. The music is synthesised in the browser, so no music file is shipped.
+
+One-time setup for making clips:
+
+```powershell
+uv venv tools/voice/.venv --python 3.12
+$env:VIRTUAL_ENV = "tools/voice/.venv"; uv pip install kokoro soundfile "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+```
+
+Then run `node scripts/voice.mjs` after changing any narrated text. Pronunciation fixes for names and acronyms are in `src/narration.mjs`. Set `VOICE` to try another Kokoro voice, for example `am_michael`.
 
 ## Hosting
 

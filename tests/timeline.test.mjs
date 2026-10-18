@@ -30,3 +30,9 @@ test('intro and detail plans are ordered', () => {
   const detail = detailPlan(byId['agentic-rag'].steps);
   assert.equal(detail.beats.length, 5); assert.ok(detail.beats.every((at, i) => i === 0 || at > detail.beats[i - 1]));
 });
+test('with sound on, a line waits for its spoken clip but never drops below reading time', () => {
+  const hook = hooks.thursday, slow = text => text === hook.see ? 20 : wordCount(text) * pace;
+  const quiet = episodePlan(hook, byId.thursday.title), spoken = episodePlan(hook, byId.thursday.title, false, slow);
+  assert.ok(spoken.beats[1] - spoken.beats[0] >= 20 && spoken.beats[0] === quiet.beats[0]);
+  assert.ok(introPlan('one two', ['a', 'b'], () => 4, 'Hi').lined > introPlan('one two', ['a', 'b']).lined);
+});

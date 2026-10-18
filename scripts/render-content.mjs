@@ -29,7 +29,7 @@ const html = `<!doctype html>
 <a class="skip-link" href="#read">Read all projects as plain text</a>
 <div class="frame" id="frame" data-view="intro">
   <header><a class="mark" href="#intro" aria-label="Mugil Sivasamy Kalamani, replay the introduction"><strong>MUGIL<b> SIVASAMY KALAMANI</b></strong><span>Physics, AI <em>and some creativity</em></span></a>
-    <nav aria-label="Main"><button class="chip glass" id="trailer">Watch the trailer</button><button class="chip glass" id="all" aria-expanded="false" aria-controls="sheet">Navigation</button><a class="chip glass about-chip" href="#about">About</a><a class="chip glass" href="mailto:mugil_sk@outlook.com">Contact</a></nav></header>
+    <nav aria-label="Main"><button class="chip glass" id="trailer">Watch the trailer</button><button class="chip glass sound" id="sound" aria-pressed="false">Mute</button><button class="chip glass" id="all" aria-expanded="false" aria-controls="sheet">Navigation</button><a class="chip glass about-chip" href="#about">About</a><a class="chip glass" href="mailto:mugil_sk@outlook.com">Contact</a></nav></header>
   <section class="scene" aria-hidden="true"><svg id="stage" viewBox="0 0 1200 600"><defs>
     <radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".15"/><stop offset=".55" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
     <linearGradient id="beam" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>

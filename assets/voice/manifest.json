@@ -1,0 +1,1118 @@
+{
+ "voice": "af_heart",
+ "lines": {
+  "57297547": {
+   "file": "57297547.mp3",
+   "seconds": 0.85,
+   "spoken": "Hi, I'm [Mugil](/mˈuɡɪl/).",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ca41a2a0": {
+   "file": "ca41a2a0.mp3",
+   "seconds": 2.08,
+   "spoken": "I build AI and software systems.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5e834a4b": {
+   "file": "5e834a4b.mp3",
+   "seconds": 2.08,
+   "spoken": "Physics, AI and some creativity.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8f6716cb": {
+   "file": "8f6716cb.mp3",
+   "seconds": 2.54,
+   "spoken": "Each project starts with a problem you may have felt.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a20f6220": {
+   "file": "a20f6220.mp3",
+   "seconds": 1.31,
+   "spoken": "Ideas, made tangible.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "af0aceac": {
+   "file": "af0aceac.mp3",
+   "seconds": 3.15,
+   "spoken": "Tired of clicking through the same screens, hour after hour?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5cc23365": {
+   "file": "5cc23365.mp3",
+   "seconds": 5.06,
+   "spoken": "Thursday reads every line on the screen and finds every button, with its exact position.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a2bcec52": {
+   "file": "a2bcec52.mp3",
+   "seconds": 5.39,
+   "spoken": "An LLM picks the next step, a tool clicks the exact spot, then Thursday looks again.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "514d1e4b": {
+   "file": "514d1e4b.mp3",
+   "seconds": 4.11,
+   "spoken": "An agent that sees the screen before it acts, and one you can simply talk to.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "fd0e364b": {
+   "file": "fd0e364b.mp3",
+   "seconds": 1.33,
+   "spoken": "You give Thursday a task.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "925ba638": {
+   "file": "925ba638.mp3",
+   "seconds": 3.11,
+   "spoken": "It captures the screen, or only the area that matters.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "764f630b": {
+   "file": "764f630b.mp3",
+   "seconds": 3.65,
+   "spoken": "A line OCR model reads every line of text on the screen.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "90130e77": {
+   "file": "90130e77.mp3",
+   "seconds": 5.16,
+   "spoken": "Omni Parser finds every button, icon and input box, with its exact position.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a463b1b4": {
+   "file": "a463b1b4.mp3",
+   "seconds": 3.51,
+   "spoken": "The text, the objects and your task go to the LLM together.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "553b3f34": {
+   "file": "553b3f34.mp3",
+   "seconds": 3.66,
+   "spoken": "The LLM chooses the next action and the object to act on.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2ee11a2b": {
+   "file": "2ee11a2b.mp3",
+   "seconds": 3.42,
+   "spoken": "A tool grounds that object to exact coordinates on the real screen.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "28b9898e": {
+   "file": "28b9898e.mp3",
+   "seconds": 3.45,
+   "spoken": "The tool performs the action: the cursor moves there and clicks.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b1589a3d": {
+   "file": "b1589a3d.mp3",
+   "seconds": 3.54,
+   "spoken": "Then Thursday looks again. The loop repeats until the job is done.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "e649a737": {
+   "file": "e649a737.mp3",
+   "seconds": 3.48,
+   "spoken": "When the job is done, it replies. If it needs something, it asks you.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b941ae60": {
+   "file": "b941ae60.mp3",
+   "seconds": 3.4,
+   "spoken": "Voice mode: you just talk to your phone. No screen, no tapping.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8a5e4c99": {
+   "file": "8a5e4c99.mp3",
+   "seconds": 4.62,
+   "spoken": "A speech-to-speech voice model listens and replies, even while you are still speaking.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "3b5ef845": {
+   "file": "3b5ef845.mp3",
+   "seconds": 3.72,
+   "spoken": "For every request it decides: answer now, or hand the work on.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "9d1fe363": {
+   "file": "9d1fe363.mp3",
+   "seconds": 3.3,
+   "spoken": "Real tasks go to the main agent through the A to A protocol.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d899734c": {
+   "file": "d899734c.mp3",
+   "seconds": 5.18,
+   "spoken": "Before a sensitive step, the tool server asks for permission, and the phone asks you out loud.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "345e7d1d": {
+   "file": "345e7d1d.mp3",
+   "seconds": 2.72,
+   "spoken": "Your spoken yes goes straight back to the tool server.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "11a6a0ce": {
+   "file": "11a6a0ce.mp3",
+   "seconds": 3.24,
+   "spoken": "The main agent reports back, and the voice model tells you.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "6bd735ee": {
+   "file": "6bd735ee.mp3",
+   "seconds": 4.47,
+   "spoken": "Ever watched a coding agent spend thousands of tokens reading a log it barely needed?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8d7635fe": {
+   "file": "8d7635fe.mp3",
+   "seconds": 4.92,
+   "spoken": "Saturn runs the command locally and keeps the full output out of the agent’s context.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "75d1e307": {
+   "file": "75d1e307.mp3",
+   "seconds": 4.24,
+   "spoken": "The agent gets a short digest and an ID it can query for any detail.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a00e9ea3": {
+   "file": "a00e9ea3.mp3",
+   "seconds": 4.93,
+   "spoken": "25,000 tokens of lint output in. 289 tokens out.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4cf8bf73": {
+   "file": "4cf8bf73.mp3",
+   "seconds": 5.8,
+   "spoken": "Without Saturn, one lint report can pour 25,000 tokens into an agent’s context.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "cb071921": {
+   "file": "cb071921.mp3",
+   "seconds": 6.62,
+   "spoken": "Saturn is a local MCP server with five tools. The agent calls it instead of running the command itself.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d868fb12": {
+   "file": "d868fb12.mp3",
+   "seconds": 4.91,
+   "spoken": "First, policy: the command is parsed without a shell and checked against an allow list.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "15e6e0f4": {
+   "file": "15e6e0f4.mp3",
+   "seconds": 6.18,
+   "spoken": "Saturn runs it and captures the raw output: here, about 8,100 tokens of test log.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "0483dbf6": {
+   "file": "0483dbf6.mp3",
+   "seconds": 4.55,
+   "spoken": "Up to 700 tokens would go back unchanged. This is far over the limit.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "058936f1": {
+   "file": "058936f1.mp3",
+   "seconds": 4.08,
+   "spoken": "So the full output is stored locally under an ID, for 48 hours.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "f281d256": {
+   "file": "f281d256.mp3",
+   "seconds": 5.37,
+   "spoken": "Code recognises the format, pie test here, and pulls out the eight failures, grouped and counted.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "3725e131": {
+   "file": "3725e131.mp3",
+   "seconds": 7.75,
+   "spoken": "Only when code cannot tell what matters does a small local model read excerpts. A line it cites that does not exist is dropped.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "7e9b6205": {
+   "file": "7e9b6205.mp3",
+   "seconds": 6.6,
+   "spoken": "The agent gets a 219-token digest and the ID, not 8,100 tokens of log.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "67707014": {
+   "file": "67707014.mp3",
+   "seconds": 4.42,
+   "spoken": "Need one detail? The agent queries the ID and gets back only that part.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a6b5e628": {
+   "file": "a6b5e628.mp3",
+   "seconds": 7.37,
+   "spoken": "On recorded runs, cuts of 97 to 99.8 percent. Across whole tasks, roughly half the tokens.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8d3c3d90": {
+   "file": "8d3c3d90.mp3",
+   "seconds": 3.36,
+   "spoken": "Ever got an answer from AI and wondered where it came from?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ee78de43": {
+   "file": "ee78de43.mp3",
+   "seconds": 3.96,
+   "spoken": "Each document is kept whole, then broken into pieces that can be found.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "7f43c9ad": {
+   "file": "7f43c9ad.mp3",
+   "seconds": 2.32,
+   "spoken": "Every answer keeps a path back to its source.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "55bfc03d": {
+   "file": "55bfc03d.mp3",
+   "seconds": 2.02,
+   "spoken": "An answer with a path back to its source.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8287b6e7": {
+   "file": "8287b6e7.mp3",
+   "seconds": 2.77,
+   "spoken": "Keep the original document available for reading.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c747a09c": {
+   "file": "c747a09c.mp3",
+   "seconds": 2.69,
+   "spoken": "Create semantic source chunks for fallback evidence.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "80d87100": {
+   "file": "80d87100.mp3",
+   "seconds": 2.47,
+   "spoken": "Distil compact knowledge entries for retrieval.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2b4f3bac": {
+   "file": "2b4f3bac.mp3",
+   "seconds": 2.35,
+   "spoken": "Search evidence through the selected RAG path.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a43394e4": {
+   "file": "a43394e4.mp3",
+   "seconds": 2.54,
+   "spoken": "Return an answer with inspectable sources.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "7e841e4b": {
+   "file": "7e841e4b.mp3",
+   "seconds": 2.28,
+   "spoken": "Would you let an AI write to your bank balance?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5b90bdf3": {
+   "file": "5b90bdf3.mp3",
+   "seconds": 3.23,
+   "spoken": "In Nimbus Finance the ledger does the maths, not the AI.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "15ec9e92": {
+   "file": "15ec9e92.mp3",
+   "seconds": 3.11,
+   "spoken": "The AI can read your numbers. It can never change them.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4839d994": {
+   "file": "4839d994.mp3",
+   "seconds": 2.3,
+   "spoken": "Financial truth has a clear write boundary.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ed73c26f": {
+   "file": "ed73c26f.mp3",
+   "seconds": 2.96,
+   "spoken": "A synthetic entry enters the financial workflow.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2f452b3f": {
+   "file": "2f452b3f.mp3",
+   "seconds": 2.43,
+   "spoken": "Deterministic rules validate the entry.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "84be8539": {
+   "file": "84be8539.mp3",
+   "seconds": 2.35,
+   "spoken": "The ledger owns the committed financial record.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "61a30b48": {
+   "file": "61a30b48.mp3",
+   "seconds": 2.94,
+   "spoken": "A read-only tool supplies calculated information.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5f15f42b": {
+   "file": "5f15f42b.mp3",
+   "seconds": 3.26,
+   "spoken": "AI explains that information outside the write boundary.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c4743c0f": {
+   "file": "c4743c0f.mp3",
+   "seconds": 6.65,
+   "spoken": "Optional sync carries the ledger over private HTTPS to a self-hosted server with encrypted backups.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "05049d66": {
+   "file": "05049d66.mp3",
+   "seconds": 2.77,
+   "spoken": "Still typing invoices into a spreadsheet by hand?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "27485d1f": {
+   "file": "27485d1f.mp3",
+   "seconds": 3.03,
+   "spoken": "Each invoice is read and checked before anything is written.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "64c24a8c": {
+   "file": "64c24a8c.mp3",
+   "seconds": 3.47,
+   "spoken": "Anything uncertain goes to a person, not into the stock sheet.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "46011229": {
+   "file": "46011229.mp3",
+   "seconds": 2.23,
+   "spoken": "Extraction earns its way into the workbook.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d824ce8f": {
+   "file": "d824ce8f.mp3",
+   "seconds": 2.52,
+   "spoken": "Read a synthetic invoice without company data.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "523f533f": {
+   "file": "523f533f.mp3",
+   "seconds": 1.76,
+   "spoken": "Extract candidate line items.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "3532f909": {
+   "file": "3532f909.mp3",
+   "seconds": 1.61,
+   "spoken": "Check structure and confidence.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4c8c7738": {
+   "file": "4c8c7738.mp3",
+   "seconds": 2.01,
+   "spoken": "Route uncertain lines through human review.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4bd67088": {
+   "file": "4bd67088.mp3",
+   "seconds": 2.01,
+   "spoken": "Apply the approved workbook update.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b7ea01a2": {
+   "file": "b7ea01a2.mp3",
+   "seconds": 4.24,
+   "spoken": "Ever downloaded a huge model, only to find it will not run on your machine?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "050ac36b": {
+   "file": "050ac36b.mp3",
+   "seconds": 3.96,
+   "spoken": "LLM GUI checks your GPU, memory and model format first.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "97ae86e6": {
+   "file": "97ae86e6.mp3",
+   "seconds": 1.77,
+   "spoken": "Only then does it download and launch.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ad0e14ae": {
+   "file": "ad0e14ae.mp3",
+   "seconds": 2.47,
+   "spoken": "Check compatibility before loading the model.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "197056ae": {
+   "file": "197056ae.mp3",
+   "seconds": 2.16,
+   "spoken": "Select a model and its storage format.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "cc0fc18f": {
+   "file": "cc0fc18f.mp3",
+   "seconds": 2.35,
+   "spoken": "Inspect hardware and memory constraints.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "62e1053d": {
+   "file": "62e1053d.mp3",
+   "seconds": 2.07,
+   "spoken": "Check backend support and launch settings.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2d546364": {
+   "file": "2d546364.mp3",
+   "seconds": 1.95,
+   "spoken": "Start the compatible serving backend.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "019d7cec": {
+   "file": "019d7cec.mp3",
+   "seconds": 3.23,
+   "spoken": "Expose the configured OpenAI-compatible interface.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "f84953f7": {
+   "file": "f84953f7.mp3",
+   "seconds": 3.0,
+   "spoken": "Ever wondered what is actually inside a language model?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "1c0b6019": {
+   "file": "1c0b6019.mp3",
+   "seconds": 3.27,
+   "spoken": "LLM View 3D opens a model into its layers.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4323d36e": {
+   "file": "4323d36e.mp3",
+   "seconds": 2.49,
+   "spoken": "You can follow a tensor through each operation.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ad266f61": {
+   "file": "ad266f61.mp3",
+   "seconds": 2.08,
+   "spoken": "Open the model. Follow the tensors.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "1a2434fe": {
+   "file": "1a2434fe.mp3",
+   "seconds": 2.83,
+   "spoken": "Read checkpoint headers without loading weight payloads.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "0f4b69f8": {
+   "file": "0f4b69f8.mp3",
+   "seconds": 2.85,
+   "spoken": "Bind variables to explicit family definitions.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b5bf6cc0": {
+   "file": "b5bf6cc0.mp3",
+   "seconds": 1.98,
+   "spoken": "Compose the text-model layer graph.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "f6ed5071": {
+   "file": "f6ed5071.mp3",
+   "seconds": 2.83,
+   "spoken": "Expand an operation and all required inputs.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "9bbd3665": {
+   "file": "9bbd3665.mp3",
+   "seconds": 2.37,
+   "spoken": "Inspect logical and stored tensor shapes.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "384bdded": {
+   "file": "384bdded.mp3",
+   "seconds": 3.99,
+   "spoken": "Do AI architecture diagrams leave you guessing what really happens?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "3105d594": {
+   "file": "3105d594.mp3",
+   "seconds": 3.65,
+   "spoken": "Tensor Tree breaks an architecture into single operations.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "f37de053": {
+   "file": "f37de053.mp3",
+   "seconds": 3.63,
+   "spoken": "Each one is shown tensor by tensor, with its formula and paper.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4a4e1867": {
+   "file": "4a4e1867.mp3",
+   "seconds": 2.98,
+   "spoken": "Complex architectures, one operation at a time.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "e773b872": {
+   "file": "e773b872.mp3",
+   "seconds": 2.03,
+   "spoken": "Find a technique in the architecture tree.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "958e04c3": {
+   "file": "958e04c3.mp3",
+   "seconds": 2.48,
+   "spoken": "Select an architecture and its explanation.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b89ee3dc": {
+   "file": "b89ee3dc.mp3",
+   "seconds": 3.15,
+   "spoken": "Identify the operation’s required input tensors.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2da6aec3": {
+   "file": "2da6aec3.mp3",
+   "seconds": 1.87,
+   "spoken": "Follow the transformation and formula.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "6e0c8587": {
+   "file": "6e0c8587.mp3",
+   "seconds": 2.33,
+   "spoken": "Inspect the output and supporting sources.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "039afbea": {
+   "file": "039afbea.mp3",
+   "seconds": 2.74,
+   "spoken": "Ever run out of memory just trying to shrink a model?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ef75bf1b": {
+   "file": "ef75bf1b.mp3",
+   "seconds": 3.08,
+   "spoken": "Many workflows copy the full model before shrinking it.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d5e6ebcf": {
+   "file": "d5e6ebcf.mp3",
+   "seconds": 3.95,
+   "spoken": "This one quantizes in place, so a second full copy is never needed.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "7455f74d": {
+   "file": "7455f74d.mp3",
+   "seconds": 1.91,
+   "spoken": "Make memory a first-class constraint.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "91dca06b": {
+   "file": "91dca06b.mp3",
+   "seconds": 1.75,
+   "spoken": "Start with a full-precision reference.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8fa36b29": {
+   "file": "8fa36b29.mp3",
+   "seconds": 2.34,
+   "spoken": "Inspect layer distributions and outliers.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "9ac07e7b": {
+   "file": "9ac07e7b.mp3",
+   "seconds": 2.05,
+   "spoken": "Apply the chosen weight representation.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "8bc4fe7b": {
+   "file": "8bc4fe7b.mp3",
+   "seconds": 2.28,
+   "spoken": "Save and reload through the memory-aware path.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b45f5288": {
+   "file": "b45f5288.mp3",
+   "seconds": 3.27,
+   "spoken": "Compare against the recorded baseline under stated conditions.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4b2ad633": {
+   "file": "4b2ad633.mp3",
+   "seconds": 3.06,
+   "spoken": "Does “bank” mean money or a river? You know. Does the model?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "88cf5310": {
+   "file": "88cf5310.mp3",
+   "seconds": 2.04,
+   "spoken": "The same word can carry different meanings.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2fe42c73": {
+   "file": "2fe42c73.mp3",
+   "seconds": 3.23,
+   "spoken": "This prototype uses context to tell those meanings apart.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "84aae58c": {
+   "file": "84aae58c.mp3",
+   "seconds": 2.0,
+   "spoken": "The same word can carry a different meaning.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "6443195d": {
+   "file": "6443195d.mp3",
+   "seconds": 2.22,
+   "spoken": "Start with an ambiguous usage example.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c11a4b3c": {
+   "file": "c11a4b3c.mp3",
+   "seconds": 1.61,
+   "spoken": "Read its surrounding context.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d03199bb": {
+   "file": "d03199bb.mp3",
+   "seconds": 1.74,
+   "spoken": "Distinguish the intended meaning.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "705643bb": {
+   "file": "705643bb.mp3",
+   "seconds": 1.94,
+   "spoken": "Apply the prototype representation.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "55773fa0": {
+   "file": "55773fa0.mp3",
+   "seconds": 2.56,
+   "spoken": "Inspect ambiguity and reliability tests.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2315a3c5": {
+   "file": "2315a3c5.mp3",
+   "seconds": 4.33,
+   "spoken": "How many layers does a neural network need, and why do most people just guess?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "cb8740cc": {
+   "file": "cb8740cc.mp3",
+   "seconds": 3.46,
+   "spoken": "This framework tests many network shapes on known data patterns.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "594a0bb0": {
+   "file": "594a0bb0.mp3",
+   "seconds": 2.86,
+   "spoken": "The shape of the data guides the choice of architecture.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "87b2f396": {
+   "file": "87b2f396.mp3",
+   "seconds": 2.08,
+   "spoken": "Let the data shape the architecture search.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "9ec2ba32": {
+   "file": "9ec2ba32.mp3",
+   "seconds": 2.2,
+   "spoken": "Define the controlled data transformation.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "6cacb8d9": {
+   "file": "6cacb8d9.mp3",
+   "seconds": 2.61,
+   "spoken": "Build candidate depth and width configurations.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a89918b1": {
+   "file": "a89918b1.mp3",
+   "seconds": 1.83,
+   "spoken": "Train under comparable conditions.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "97050aef": {
+   "file": "97050aef.mp3",
+   "seconds": 2.27,
+   "spoken": "Evaluate the resulting model behavior.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d15abf73": {
+   "file": "d15abf73.mp3",
+   "seconds": 2.07,
+   "spoken": "Compare the architecture-selection approach.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "f422f086": {
+   "file": "f422f086.mp3",
+   "seconds": 2.1,
+   "spoken": "Do you know how clean the air is on your own street?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "91995b22": {
+   "file": "91995b22.mp3",
+   "seconds": 3.91,
+   "spoken": "Dublin is split into small grid squares, each with its own forecast.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "d7ee3d65": {
+   "file": "d7ee3d65.mp3",
+   "seconds": 3.15,
+   "spoken": "When the data drifts, the model is retrained automatically.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "643d510c": {
+   "file": "643d510c.mp3",
+   "seconds": 2.26,
+   "spoken": "Environmental data, at urban scale.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "9f4dee31": {
+   "file": "9f4dee31.mp3",
+   "seconds": 2.44,
+   "spoken": "Collect environmental and weather inputs.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b458728f": {
+   "file": "b458728f.mp3",
+   "seconds": 1.59,
+   "spoken": "Prepare the selected features.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "75cbd6c9": {
+   "file": "75cbd6c9.mp3",
+   "seconds": 1.76,
+   "spoken": "Map the inputs to the urban grid.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ab0049a4": {
+   "file": "ab0049a4.mp3",
+   "seconds": 1.96,
+   "spoken": "Produce a forecast for the grid cells.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "e53d2c2f": {
+   "file": "e53d2c2f.mp3",
+   "seconds": 2.22,
+   "spoken": "Monitor drift and schedule retraining.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "59a6221e": {
+   "file": "59a6221e.mp3",
+   "seconds": 3.39,
+   "spoken": "Ever shared a photo and later noticed what was in the background?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c52fc019": {
+   "file": "c52fc019.mp3",
+   "seconds": 2.95,
+   "spoken": "The image is split into regions, and each one is checked.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a7b0e772": {
+   "file": "a7b0e772.mp3",
+   "seconds": 3.68,
+   "spoken": "Sensitive text, symbols and objects are masked before sharing.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4e4fb158": {
+   "file": "4e4fb158.mp3",
+   "seconds": 2.06,
+   "spoken": "Find sensitive regions before sharing.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c8a28ce5": {
+   "file": "c8a28ce5.mp3",
+   "seconds": 2.21,
+   "spoken": "Start with an explicitly synthetic image.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "82dd9cce": {
+   "file": "82dd9cce.mp3",
+   "seconds": 1.68,
+   "spoken": "Separate regions for analysis.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5a9243f9": {
+   "file": "5a9243f9.mp3",
+   "seconds": 1.88,
+   "spoken": "Classify the content of each region.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "2a7a95c1": {
+   "file": "2a7a95c1.mp3",
+   "seconds": 2.23,
+   "spoken": "Identify candidate sensitive regions.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b69a929c": {
+   "file": "b69a929c.mp3",
+   "seconds": 1.95,
+   "spoken": "Mask selected regions in the output.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "df0051b1": {
+   "file": "df0051b1.mp3",
+   "seconds": 2.15,
+   "spoken": "What if a field could tell when it needs water?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "167de591": {
+   "file": "167de591.mp3",
+   "seconds": 2.5,
+   "spoken": "A camera and a moisture sensor watch the crop.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b1628610": {
+   "file": "b1628610.mp3",
+   "seconds": 3.28,
+   "spoken": "A small neural network decides, and the motor responds.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "b08e238e": {
+   "file": "b08e238e.mp3",
+   "seconds": 2.29,
+   "spoken": "Connect perception to an embedded action.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5023bb28": {
+   "file": "5023bb28.mp3",
+   "seconds": 1.95,
+   "spoken": "Capture crop imagery for the workflow.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "a28f8a9c": {
+   "file": "a28f8a9c.mp3",
+   "seconds": 1.95,
+   "spoken": "Classify the image through the CNN.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "55772cc5": {
+   "file": "55772cc5.mp3",
+   "seconds": 1.83,
+   "spoken": "Read the moisture sensor context.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4934aad5": {
+   "file": "4934aad5.mp3",
+   "seconds": 1.75,
+   "spoken": "Apply the motor-control decision.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "41189744": {
+   "file": "41189744.mp3",
+   "seconds": 2.66,
+   "spoken": "Operate irrigation under the configured logic.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "5ff57fb7": {
+   "file": "5ff57fb7.mp3",
+   "seconds": 3.07,
+   "spoken": "Ever lost track of what your GPUs are doing mid-run?",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "4e278950": {
+   "file": "4e278950.mp3",
+   "seconds": 3.51,
+   "spoken": "A small always-there panel shows each GPU and the CPU.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "73d28e25": {
+   "file": "73d28e25.mp3",
+   "seconds": 2.34,
+   "spoken": "If a sensor goes missing, it keeps working.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "023b57d2": {
+   "file": "023b57d2.mp3",
+   "seconds": 2.37,
+   "spoken": "Useful telemetry in a small footprint.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ca2311c3": {
+   "file": "ca2311c3.mp3",
+   "seconds": 2.09,
+   "spoken": "Observe available hardware sensors.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "c5ec659e": {
+   "file": "c5ec659e.mp3",
+   "seconds": 1.49,
+   "spoken": "Collect the selected readings.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "ee9c980a": {
+   "file": "ee9c980a.mp3",
+   "seconds": 2.19,
+   "spoken": "Preserve unavailable readings as missing.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "99716b4a": {
+   "file": "99716b4a.mp3",
+   "seconds": 2.03,
+   "spoken": "Maintain the configured rolling history.",
+   "voice": "af_heart",
+   "speed": 1
+  },
+  "7fb8c632": {
+   "file": "7fb8c632.mp3",
+   "seconds": 2.2,
+   "spoken": "Present compact meters or graph views.",
+   "voice": "af_heart",
+   "speed": 1
+  }
+ }
+}

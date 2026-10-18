@@ -196,6 +196,11 @@ header nav { display: flex; gap: 10px; }
 .stop.on .trail, .stop.past .trail { stroke-dashoffset: 0; }
 .count { font: 300 32px var(--sans); fill: var(--white); stroke: none; }
 
+/* Sound: a chip that mutes narration and music; it pulses while a browser waits for a first click. */
+.sound[aria-pressed="true"] { color: var(--grey); }
+.sound.waiting { animation: call 1.6s ease-in-out infinite; }
+@keyframes call { 50% { box-shadow: 0 0 0 6px rgba(255,255,255,.18); } }
+
 /* Detailed view: the system drawn as parts and wires; the current step is white, earlier steps dim. */
 .walk text { stroke: none; }
 .walk .lbl { font: 600 17px var(--sans); fill: var(--white); }

@@ -31,4 +31,4 @@ Full black with white, silver and grey only. One drawn object on stage. Handwrit
 
 ## Accessibility
 
-Keyboard operation, visible focus, reduced-motion stills, live-region narration with full sentences, and a plain-text version of every story that also works without scripts.
+Keyboard operation, visible focus, optional narration that never replaces the words on screen, reduced-motion stills, live-region narration with full sentences, and a plain-text version of every story that also works without scripts.
