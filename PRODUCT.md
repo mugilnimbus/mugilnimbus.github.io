@@ -13,7 +13,7 @@ Web. Browser-native HTML, CSS and JavaScript modules with inline SVG drawings. A
 
 ## Purpose
 
-Present Mugil Sivasamy Kalamani, whose background is physics and artificial intelligence, through 14 projects told as a self-playing series.
+Present Mugil Sivasamy Kalamani, whose background is physics and artificial intelligence, through 15 projects told as a self-playing series.
 
 ## Principles
 

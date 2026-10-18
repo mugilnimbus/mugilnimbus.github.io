@@ -3,7 +3,7 @@
 const hook = (question, see, act, notes, scene) => ({ question, see, act, notes, scene });
 
 export const groups = Object.freeze([
-  { name: 'Agents', ids: ['thursday'] },
+  { name: 'Agents', ids: ['thursday', 'saturn'] },
   { name: 'Knowledge and products', ids: ['agentic-rag', 'finance', 'invoice', 'llm-gui'] },
   { name: 'Model internals', ids: ['llm-view', 'tensor-tree', 'quantization', 'tokenization', 'automl'] },
   { name: 'Data and vision', ids: ['pollution', 'image-privacy', 'irrigation', 'gpu-hud'] },
@@ -16,6 +16,9 @@ export const hooks = Object.freeze({
   'thursday': hook('Tired of clicking through the same screens, hour after hour?',
     'Thursday reads every line on the screen and finds every button, with its exact position.', 'An LLM picks the next step, a tool clicks the exact spot, then Thursday looks again.',
     ['reads the text, finds every button', 'clicks the exact spot, looks again'], 'screen'),
+  'saturn': hook('Ever watched a coding agent spend thousands of tokens reading a log it barely needed?',
+    'Saturn runs the command locally and keeps the full output out of the agent’s context.', 'The agent gets a short digest and an ID it can query for any detail.',
+    ['the raw output stays local', 'a digest and an ID go back'], 'saturn'),
   'agentic-rag': hook('Ever got an answer from AI and wondered where it came from?',
     'Each document is kept whole, then broken into pieces that can be found.', 'Every answer keeps a path back to its source.',
     ['documents become findable pieces', 'the answer points back to its source'], 'docs'),

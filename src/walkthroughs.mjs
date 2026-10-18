@@ -65,6 +65,35 @@ const voice = `
   ${flow('M292 252H420', '1 5')}${flow('M420 290H292', '1 4 6')}${flow('M620 236H650V136H690', '2')}${flow('M620 280H880', '3')}
   ${flow('M965 335V410', '4')}${flow('M880 438H520V320', '4')}${flow('M560 320V495H965V466', '5')}${flow('M880 304H622', '6')}`;
 
+// Saturn MCP: one noisy test run, from the agent's call to a digest and a queryable ID.
+const rawLines = Array.from({ length: 12 }, (_, i) => `M812 ${198 + i * 14}h${[60, 44, 66, 52, 38, 62, 48, 66, 30, 56, 64, 40][i]}`).join('');
+const saturn = `
+  ${part(0, `<rect class="ln" x="110" y="230" width="180" height="120" rx="16"/><text class="lbl" x="126" y="258">Coding agent</text>
+    <text class="sub" x="126" y="290">context</text><rect class="ln" x="126" y="300" width="148" height="14" rx="7"/>`, { cls: 'keep' })}
+  ${part(0, `<rect class="solid" x="126" y="300" width="148" height="14" rx="7"/><text class="code" x="126" y="336">25,000 tokens</text>`, { cls: 'gone' })}
+  ${part(1, `<rect class="ln frame" x="400" y="100" width="680" height="420" rx="22"/><text class="lbl" x="420" y="132">Saturn</text>
+    <text class="sub" x="486" y="132">local MCP server</text><text class="code" x="420" y="160">saturn_run · read · search · ask · query</text>
+    ${wire('M290 290H350V222H420', [420, 222], 'r')}<text class="code" x="296" y="280">saturn_run</text>`, { cls: 'keep' })}
+  ${part(2, box(420, 190, 150, 64, 'Policy', ['allow list, no shell']), { lit: '' })}
+  ${part(3, `${wire('M570 222H610', [610, 222], 'r')}${box(610, 190, 150, 64, 'Run', ['pytest -q'])}
+    ${wire('M760 222H800', [800, 222], 'r')}<rect class="ln" x="800" y="180" width="90" height="200" rx="8"/><path class="ln thin" d="${rawLines}"/>
+    <text class="code" x="845" y="400" text-anchor="middle">raw · 8,100 tokens</text>`)}
+  ${part(4, `${wire('M890 204H920', [920, 204], 'r')}<text class="sub" x="920" y="186">700-token limit</text>
+    <rect class="ln" x="920" y="196" width="140" height="16" rx="8"/><rect class="solid" x="920" y="196" width="140" height="16" rx="8"/>
+    <path class="ln" d="M980 188v32"/><text class="code" x="920" y="240">8,100 &gt; 700</text>`)}
+  ${part(5, `${wire('M1040 246V286', [1040, 286], 'd')}<ellipse class="ln" cx="1000" cy="300" rx="46" ry="12"/><path class="ln" d="M954 300v66M1046 300v66M954 366a46 12 0 0 0 92 0"/>
+    <text class="code" x="1000" y="342" text-anchor="middle">id a1f3</text><text class="sub" x="1000" y="398" text-anchor="middle">kept 48 hours</text>`, { cls: 'keep' })}
+  ${part(6, `${wire('M845 380V355H770', [770, 355], 'l')}${box(610, 320, 160, 70, 'Digest by code', ['pytest · 8 failures'])}`, { cls: 'keep' })}
+  ${part(7, `${wire('M610 355H570', [570, 355], 'l')}${box(420, 320, 150, 70, 'Local model')}
+    <text class="code" x="436" y="372">L412 ✓</text><text class="code" x="500" y="372">L9999</text><path class="ln" d="M497 368h50"/>`)}
+  ${part(8, `${wire('M690 390V458H650', [650, 458], 'l')}<rect class="ln" x="420" y="430" width="230" height="56" rx="12"/>
+    <text class="code" x="436" y="454">digest · 219 tokens</text><text class="code" x="436" y="474">id a1f3</text>
+    ${wire('M420 458H200V350', [200, 350], 'u')}`, { lit: '10' })}
+  ${part(9, `${wire('M290 330H340V506H1000V382', [1000, 382], 'u')}<text class="code" x="700" y="498">saturn_query · id a1f3 · L412</text>`)}
+  ${part(10, `<rect class="solid" x="126" y="300" width="18" height="14" rx="7"/><text class="code" x="126" y="336">219 tokens</text>`)}
+  ${flow('M290 290H350V222H420', '1')}${flow('M570 222H610', '3')}${flow('M760 222H800', '3')}${flow('M890 204H920', '4')}${flow('M1040 246V286', '5')}
+  ${flow('M845 380V355H770', '6')}${flow('M610 355H570', '7')}${flow('M690 390V458H650', '8')}${flow('M420 458H200V350', '8 10')}${flow('M290 330H340V506H1000V382', '9')}`;
+
 export const walkthroughs = Object.freeze({
   thursday: {
     chapters: [
@@ -96,6 +125,27 @@ export const walkthroughs = Object.freeze({
           'The main agent reports back, and the voice model tells you.',
         ],
         focus: [[300, 270], [420, 270], [640, 210], [760, 280], [700, 360], [600, 420], [480, 250]],
+      },
+    ],
+  },
+  saturn: {
+    chapters: [
+      {
+        name: 'One noisy test run', markup: saturn,
+        steps: [
+          'Without Saturn, one lint report can pour 25,000 tokens into an agent’s context.',
+          'Saturn is a local MCP server with five tools. The agent calls it instead of running the command itself.',
+          'First, policy: the command is parsed without a shell and checked against an allow list.',
+          'Saturn runs it and captures the raw output: here, about 8,100 tokens of test log.',
+          'Up to 700 tokens would go back unchanged. This is far over the limit.',
+          'So the full output is stored locally under an ID, for 48 hours.',
+          'Code recognises the format, pytest here, and pulls out the eight failures, grouped and counted.',
+          'Only when code cannot tell what matters does a small local model read excerpts. A line it cites that does not exist is dropped.',
+          'The agent gets a 219-token digest and the ID, not 8,100 tokens of log.',
+          'Need one detail? The agent queries the ID and gets back only that part.',
+          'On recorded runs, cuts of 97 to 99.8 percent. Across whole tasks, roughly half the tokens.',
+        ],
+        focus: [[200, 290], [400, 250], [500, 222], [760, 260], [960, 220], [980, 330], [700, 355], [500, 355], [450, 450], [700, 450], [200, 290]],
       },
     ],
   },

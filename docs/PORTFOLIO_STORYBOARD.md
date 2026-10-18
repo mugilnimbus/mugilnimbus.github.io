@@ -29,7 +29,7 @@ Next episode plays by itself        Detailed view / Read the full story / View s
 
 | Group | Episodes |
 | --- | --- |
-| Agents | Thursday |
+| Agents | Thursday, Saturn MCP |
 | Knowledge and products | Nimbus Agentic RAG, Nimbus Finance, Invoice-to-Stock, LLM GUI |
 | Model internals | LLM View 3D, GenAI Tensor Tree, Model Inspection & Quantization, Contextual Tokenization, Deep Neural Networks AutoML |
 | Data and vision | Dublin Pollution Forecasting, Image PII Detection & Masking, CNN Irrigation Automation, GPU HUD |
@@ -42,7 +42,7 @@ The trailer features Thursday, Nimbus Agentic RAG, Nimbus Finance and LLM View 3
 | --- | --- | --- |
 | Star names | Intro | Hovering a star writes its project name |
 | Skills list | Intro, bottom right | Six skill areas, shown with the closing line |
-| Navigation | Header, every view | Intro, 14 episodes by group, About me |
+| Navigation | Header, every view | Intro, 15 episodes by group, About me |
 | About me | Navigation, header and `#about` | Physics, AI, creativity, education, publications, tools, links |
 
 ## Detailed view: Thursday
@@ -51,3 +51,9 @@ The trailer features Thursday, Nimbus Agentic RAG, Nimbus Finance and LLM View 3
 | --- | --- |
 | Computer control | Task, capture, line OCR, OmniParser, LLM, action and target, grounding, act, look again, reply or ask |
 | Voice agent (In progress) | Phone, voice model, answer or delegate, A2A to the main agent, permission by voice, spoken yes, result spoken back |
+
+## Detailed view: Saturn MCP
+
+| Chapter | Steps |
+| --- | --- |
+| One noisy test run | Context flooded without Saturn, call over MCP, policy, run, 700-token limit, store with ID for 48 hours, digest by code, local model only when needed, digest and ID returned, query one detail, the saving |

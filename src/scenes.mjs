@@ -16,6 +16,16 @@ const scenes = {
     <path class="m2 solid edge" style="--fx:560px;--fy:380px;--tx:706px;--ty:220px" d="M0 0v22l6-5 4 10 4-2-4-9h8z"/>
     <text class="tiny f1" style="--n:2" x="421" y="190">52, 40</text><text class="tiny f1" style="--n:3" x="645" y="190">1310, 42</text>
     <path class="d2" style="--n:5" d="M680 470C740 500 700 532 600 532S462 500 520 470"/><path class="d2" style="--n:6" d="M509 468l11 2-6 10"/>`,
+  saturn: `
+    <rect class="d0" x="410" y="150" width="110" height="290" rx="8" stroke-width="1.8"/>
+    <g class="f0 thin"><path d="${Array.from({ length: 16 }, (_, i) => `M424 ${172 + i * 16}h${[70, 52, 80, 44, 66, 76, 38, 60, 80, 50, 72, 42, 64, 78, 46, 58][i]}`).join('')}"/></g>
+    <rect class="scan" x="412" y="152" width="106" height="30" style="--travel:250px"/>
+    <circle class="d0" cx="600" cy="295" r="30" stroke-width="1.8"/><ellipse class="d0" cx="600" cy="295" rx="58" ry="14" transform="rotate(-18 600 295)"/>
+    <path class="d1" style="--n:1" d="M528 295h30m-9-8 9 8-9 8"/>
+    <ellipse class="d1" style="--n:2" cx="600" cy="392" rx="30" ry="8"/><path class="d1" style="--n:3" d="M570 392v38M630 392v38M570 430a30 8 0 0 0 60 0"/>${hand(600, 470, '48 h', 'f1 small', 'middle')}
+    <path class="d2" d="M666 295h22m-9-8 9 8-9 8"/><rect class="d2" style="--n:1" x="694" y="255" width="96" height="80" rx="8"/>
+    ${[[0, 64], [1, 44], [2, 56]].map(([row, width], i) => `<rect class="f2 solid" style="--n:${i + 2}" x="706" y="${270 + row * 18}" width="${width}" height="8" rx="4"/>`).join('')}
+    <text class="tiny f2" style="--n:5" x="706" y="352">id a1f3</text>`,
   docs: `
     <rect class="d0" x="420" y="165" width="150" height="205" rx="8" stroke-width="1.8"/>
     <g class="f0 thin"><path d="M440 195h110M440 217h110M440 239h80M440 283h110M440 305h110M440 327h60"/></g>

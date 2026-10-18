@@ -216,6 +216,7 @@ header nav { display: flex; gap: 10px; }
 .walk .shown .ln { stroke-dashoffset: 0; }
 .walk .hl { stroke-width: 2.6; }
 .walk .area { stroke-dasharray: 7 7; }
+.walk .frame { stroke: var(--grey); }
 .walk .flow { stroke-width: 2.6; stroke-dasharray: 2 10; opacity: 0; transition: opacity .4s; }
 .walk .flow.flowing { opacity: 1; animation: march .8s linear infinite; }
 @keyframes march { to { stroke-dashoffset: -12; } }

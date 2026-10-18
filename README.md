@@ -2,7 +2,7 @@
 
 **Watch it: [mugilnimbus.github.io](https://mugilnimbus.github.io/)**
 
-Tired of portfolios that make you dig through pages to find out what someone actually built? This one plays itself: 14 projects, each told as a short episode that opens with a problem you may have felt and shows the one idea that answers it.
+Tired of portfolios that make you dig through pages to find out what someone actually built? This one plays itself: 15 projects, each told as a short episode that opens with a problem you may have felt and shows the one idea that answers it.
 
 Each episode asks its question word by word, draws a single object on a black stage, and explains one idea in two short beats. Step-by-step detail, the full written story and the source are there only if you ask for them. Everything is drawn live as line art, so there is no video or 3D to download.
 
@@ -21,10 +21,10 @@ Open `http://127.0.0.1:5173/`. Node 22 or later is required.
 | Intro | A handwritten greeting, then a handwritten sum, physics + AI with "some creativity" squeezed in above, whose answer is one point that opens into four constellations of project stars. Hovering a star shows the project's name. A short list of technical skills sits bottom right on wide windows |
 | Episode | A question, one drawn object, two beats, and the project's line; about half a minute |
 | Trailer | Four featured projects in shortened form, about one minute |
-| Detailed view | The system itself, step by step: parts and wires drawn in order, the current step in white and data moving along the wires. Thursday has its own two-chapter walkthrough (computer control, and the voice agent marked In progress); other projects use a ring of steps |
+| Detailed view | The system itself, step by step: parts and wires drawn in order, the current step in white and data moving along the wires. Thursday (computer control, and the voice agent marked In progress) and Saturn MCP (one noisy test run) have their own walkthroughs; other projects use a ring of steps |
 | Read the full story | Problem, approach, skills, steps, source and limits as plain text |
 | Switching | Previous, Next, a tick for every episode, or any star in the intro |
-| Navigation | A panel in the header on every view: the intro, all 14 episodes by group, and About me |
+| Navigation | A panel in the header on every view: the intro, all 15 episodes by group, and About me |
 | About me | Background in physics and AI, education, publications, tools and contact links |
 
 Keyboard: left and right change episode, space pauses, escape closes a panel. With reduced motion, nothing plays by itself and each view is shown complete. Without scripts, the full stories are shown as an ordinary page.
@@ -60,6 +60,7 @@ The site is static and has no dependencies. Any static host can serve the reposi
 - Hook questions are drafts drawn from the reviewed project descriptions.
 - The skills list is shown only on windows at least 1560px wide.
 - Handwriting is Ink Free on Windows and the bundled Shadows Into Light (SIL Open Font License, in `assets/fonts/`) elsewhere.
+- Saturn MCP links to its planned public repository, Saturn-MCP.
 - Nine projects link to public source; seven are private or currently unavailable and say so.
 - Not yet checked on physical phones, other browsers or with a screen reader.
 

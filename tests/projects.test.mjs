@@ -45,7 +45,7 @@ test('every walkthrough step has a part to show and a point to pan to', () => {
   assert.equal(thursday[1].badge, 'In progress');
 });
 test('public sources and unavailable sources remain distinct', () => {
-  assert.equal(projects.filter(p => p.repository).length, 7);
+  assert.equal(projects.filter(p => p.repository).length, 8);
   for (const id of ['invoice', 'quantization', 'llm-gui', 'image-privacy', 'automl', 'tokenization', 'irrigation']) assert.equal(projects.find(p => p.id === id).repository, null);
   assert.match(projects.find(p => p.id === 'thursday').limit, /in progress/);
 });
