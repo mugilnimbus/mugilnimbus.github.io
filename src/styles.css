@@ -4,7 +4,6 @@
 * { box-sizing: border-box; margin: 0; }
 html { background: #000; }
 body { background: #000; color: var(--white); font: 400 15px/1.55 var(--sans); min-height: 100dvh; }
-.ready body { overflow: hidden; }
 a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
@@ -76,7 +75,7 @@ header nav { display: flex; gap: 10px; }
 .hello p { font-size: clamp(18px, 2vw, 28px); font-weight: 300; margin-top: 26px; color: var(--silver); min-height: 1.6em; }
 .hello p span, .ask span { display: inline-block; opacity: 0; transform: translateY(.4em) rotate(-2deg); transition: opacity .5s, transform .6s var(--ease); transition-delay: calc(var(--w) * var(--step)); }
 .lined .hello p span { opacity: 1; transform: none; }
-.strands .hello { transform: translateY(-34vh) scale(.42); opacity: .9; }
+.strands .hello { transform: translateY(calc(112px - 47dvh)) scale(.42); opacity: .9; }
 .strands .hello p { opacity: 0; transition: opacity .5s; }
 :not([data-view="intro"]) > .hello { display: none; }
 .sum { font-size: 62px; clip-path: inset(-20% 100% -30% 0); transition: clip-path 1.3s linear; }
@@ -196,8 +195,11 @@ header nav { display: flex; gap: 10px; }
 .stop.on .trail, .stop.past .trail { stroke-dashoffset: 0; }
 .count { font: 300 32px var(--sans); fill: var(--white); stroke: none; }
 
-/* Sound: a chip that mutes narration and music; it pulses while a browser waits for a first click. */
-.sound[aria-pressed="true"] { color: var(--grey); }
+/* Sound: a speaker icon that mutes narration and music; it pulses while a browser waits for a first click. */
+.sound { width: 40px; padding: 0; justify-content: center; }
+.sound svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sound .cross, .sound[aria-pressed="true"] .waves { display: none; }
+.sound[aria-pressed="true"] { color: var(--grey); } .sound[aria-pressed="true"] .cross { display: inline; }
 .sound.waiting { animation: call 1.6s ease-in-out infinite; }
 @keyframes call { 50% { box-shadow: 0 0 0 6px rgba(255,255,255,.18); } }
 
@@ -261,16 +263,42 @@ header nav { display: flex; gap: 10px; }
   .skills li:not(:last-child)::after { content: '·'; margin: 0 .7em; color: var(--grey); }
   [data-view="intro"] .scene { padding: 120px 0 310px; } [data-view="intro"] .scene svg { height: max(120px, calc(100dvh - 450px)); }
 }
+/* Desktop intro: the stars use the space above the closing line, buttons and skills. */
+@media (min-width: 901px) { [data-view="intro"] .scene { padding: 64px 0 250px; } [data-view="intro"] .scene svg { height: min(900px, calc(100dvh - 314px)); } }
+/* Mid widths (small laptops, tablets on their side, a phone's desktop mode): title and actions sit above the narration. */
+@media (min-width: 901px) and (max-width: 1400px) { .story, .more { bottom: 196px; } .story { max-width: 34vw; } }
+@media (min-width: 901px) { [data-view="intro"] .narration { width: min(92vw, 520px); } }
 @media (max-width: 900px) {
-  header { padding: 18px 20px 0; } .mark span, .mark b, .meter, #trailer, .about-chip { display: none; }
-  .scene { padding-bottom: 24vh; } .hand { font-size: 36px; } .hand.small { font-size: 28px; } .group { font-size: 30px; }
-  .story { left: 20px; bottom: 214px; max-width: 56vw; } .more { right: 20px; bottom: 214px; } .more a { display: none; } #notes, .ticks { display: none; }
-  :not([data-view="intro"]) > .scene { padding-bottom: 30vh; } :not([data-view="intro"]) > .scene svg { height: min(46vh, 520px); }
-  .narration { bottom: 92px; } [data-view="intro"] .narration { bottom: 190px; } .skills { bottom: 262px; } [data-view="intro"] .scene { padding: 130px 0 400px; } [data-view="intro"] .scene svg { height: max(120px, calc(100dvh - 540px)); }
-  .dock { bottom: 22px; gap: 8px; padding: 7px 10px; } .ticks { gap: 5px; } .ticks div { gap: 2px; } .ticks a { width: 5px; } .ticks a[aria-current] { width: 12px; }
-  .start { flex-direction: column; width: calc(100% - 40px); } .skip { right: 14px; bottom: 8px; }
-  .pick { display: none; } .strands .hello { transform: translateY(-33vh) scale(.62); }
-  .ask p { font-size: clamp(30px, 8.4vw, 50px); max-width: 88vw; } .ask { padding: 0 6vw 16vh; }
-  .sheet, .sheet.about { right: 12px; left: 12px; width: auto; top: 70px; }
+  /* Phones: one stack anchored to the bottom (controls, narration, title row) and the drawing fills the space above. */
+  header { padding: 14px 14px 0; } header nav { gap: 6px; }
+  .mark span, .mark b, .meter, #trailer, .about-chip, .more a, #notes, .ticks, .pick, .object .loop { display: none; }
+  .mark strong { font-size: 13px; letter-spacing: .24em; }
+  .chip { font-size: 11px; letter-spacing: .05em; padding: 8px 12px; min-height: 36px; }
+  .sound { width: 36px; }
+  .sheet, .sheet.about { right: 12px; left: 12px; width: auto; top: 62px; }
+
+  .hand { font-size: 36px; } .hand.small { font-size: 28px; } .group { font-size: 30px; }
+
+  /* Episodes and detailed views. From the bottom: controls, narration (room for three lines), then the title row. */
+  .dock { bottom: 14px; gap: 8px; padding: 6px 10px; }
+  .narration { bottom: 74px; width: calc(100% - 28px); min-height: 0; font-size: clamp(14px, 3.9vw, 17px); }
+  .narration p.big { font-size: clamp(20px, 5.6vw, 28px); }
+  .story { left: 16px; bottom: 150px; max-width: none; }
+  .story h1 { font-size: clamp(24px, 7vw, 34px); margin-top: 10px; max-width: calc(100vw - 172px); }
+  .tag { white-space: nowrap; letter-spacing: .14em; }
+  .more { right: 16px; bottom: 150px; }
+  .detail { font-size: 12px; padding: 9px 14px; }
+  :not([data-view="intro"]) > .scene { padding: 60px 0 236px; }
+  :not([data-view="intro"]) > .scene svg { height: min(520px, calc(100dvh - 296px)); }
+  .ask { padding: 60px 6vw 236px; } .ask p { font-size: clamp(24px, 6.8vw, 38px); max-width: 88vw; }
+
+  /* Intro. From the bottom: two buttons side by side, the spoken line, the skills, then the stars. */
+  .start { width: calc(100% - 28px); bottom: 14px; gap: 8px; } .start button { flex: 1; padding: 12px 6px; font-size: 12px; }
+  .skip { right: 14px; bottom: 6px; }
+  [data-view="intro"] .narration { bottom: 70px; }
+  .skills { bottom: 160px; }
+  [data-view="intro"] .scene { padding: 100px 0 286px; } [data-view="intro"] .scene svg { height: max(170px, calc(100dvh - 386px)); }
+  .hello h1 { font-size: clamp(38px, 12vw, 64px); } .strands .hello { transform: translateY(calc(96px - 47dvh)) scale(.62); }
+
   .walk .lbl { font-size: 22px; } .walk .lbl.big { font-size: 28px; } .walk .sub, .walk .code, .walk .msg { font-size: 16px; } .walk .cap { font-size: 16px; } .walk .badge text { font-size: 13px; }
 }

@@ -232,7 +232,8 @@ $('#skip').addEventListener('click', () => { elapsed = plan.beats[2]; shown = -2
 // The header button mutes or unmutes. Unmuting replays the current view from its start, so every line is heard.
 function showSound() {
   soundButton.setAttribute('aria-pressed', String(!soundOn)); soundButton.classList.toggle('waiting', waiting);
-  soundButton.textContent = !soundOn ? 'Unmute' : waiting ? 'Tap for sound' : 'Mute';
+  const label = !soundOn ? 'Unmute' : waiting ? 'Tap for sound' : 'Mute';
+  soundButton.setAttribute('aria-label', label); soundButton.title = label;
 }
 function replayView() {
   if (view === 'intro') showIntro(); else if (view === 'detail') showDetail(current); else showEpisode(current, trailer >= 0);
@@ -284,7 +285,7 @@ showSound();
 setPlaying(playing);
 route();
 // Clip lengths arrive after the first view starts; with sound remembered as on, replay that view with them.
-loadVoice().then(ready => { if (ready && soundOn && !still.matches) { if (view === 'intro') showIntro(); else if (view === 'detail') showDetail(current); else showEpisode(current); } });
+loadVoice().then(ready => { if (ready && soundOn && !still.matches && !new URLSearchParams(location.search).has('at')) { if (view === 'intro') showIntro(); else if (view === 'detail') showDetail(current); else showEpisode(current); } });
 // A link may open a moment of an episode or its walkthrough, paused: for example ?at=12#thursday or ?detail&at=9#thursday.
 const query = new URLSearchParams(location.search), moment = Number(query.get('at'));
 if (query.has('detail') && byId[location.hash.slice(1)]) showDetail(current);

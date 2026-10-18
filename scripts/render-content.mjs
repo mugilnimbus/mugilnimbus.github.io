@@ -29,7 +29,7 @@ const html = `<!doctype html>
 <a class="skip-link" href="#read">Read all projects as plain text</a>
 <div class="frame" id="frame" data-view="intro">
   <header><a class="mark" href="#intro" aria-label="Mugil Sivasamy Kalamani, replay the introduction"><strong>MUGIL<b> SIVASAMY KALAMANI</b></strong><span>Physics, AI <em>and some creativity</em></span></a>
-    <nav aria-label="Main"><button class="chip glass" id="trailer">Watch the trailer</button><button class="chip glass sound" id="sound" aria-pressed="false">Mute</button><button class="chip glass" id="all" aria-expanded="false" aria-controls="sheet">Navigation</button><a class="chip glass about-chip" href="#about">About</a><a class="chip glass" href="mailto:mugil_sk@outlook.com">Contact</a></nav></header>
+    <nav aria-label="Main"><button class="chip glass" id="trailer">Watch the trailer</button><button class="chip glass sound" id="sound" aria-pressed="false" aria-label="Mute" title="Mute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="waves" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="cross" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button><button class="chip glass" id="all" aria-expanded="false" aria-controls="sheet">Navigation</button><a class="chip glass about-chip" href="#about">About</a><a class="chip glass" href="mailto:mugil_sk@outlook.com">Contact</a></nav></header>
   <section class="scene" aria-hidden="true"><svg id="stage" viewBox="0 0 1200 600"><defs>
     <radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".15"/><stop offset=".55" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
     <linearGradient id="beam" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
@@ -38,7 +38,7 @@ const html = `<!doctype html>
   <div class="ask" aria-hidden="true"><p id="ask"></p></div>
   <div class="story"><span class="tag" id="tag"></span><h1 id="title"><span></span></h1></div>
   <div class="narration" aria-live="polite"><p id="line" class="out"></p></div>
-  <div class="start"><button class="primary" id="start-trailer">Watch the 60-second trailer</button><button class="glass" id="start-first">Start with episode 1</button></div>
+  <div class="start"><button class="primary" id="start-trailer">Watch the trailer</button><button class="glass" id="start-first">Start with episode 1</button></div>
   <ul class="skills" aria-label="Technical skills">${skills.map((skill, i) => `<li style="--i:${i}">${escape(skill)}</li>`).join('')}</ul>
   <button class="skip" id="skip">Skip intro</button>
   <div class="dock glass"><button id="previous" aria-label="Previous episode">◀</button><button class="play" id="play" aria-label="Pause">❚❚</button><button id="next" aria-label="Next episode">▶</button><div class="meter" aria-hidden="true"><i></i></div><div class="ticks" id="ticks">${ticks}</div></div>

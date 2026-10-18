@@ -26,7 +26,7 @@ Open `http://127.0.0.1:5173/`. Node 22 or later is required.
 | Switching | Previous, Next, a tick for every episode, or any star in the intro |
 | Navigation | A panel in the header on every view: the intro, all 15 episodes by group, and About me |
 | About me | Background in physics and AI, education, publications, tools and contact links |
-| Sound | On when the site opens, with a Mute button in the header that is remembered across reloads. A natural voice reads every line from "Hi, I'm Mugil." onward, in step with the words, over quiet ambient music; each line lasts as long as its clip. Browsers hold sound until the first click or key press, so the button reads Tap for sound until then |
+| Sound | On when the site opens, with a speaker button in the header that mutes it, remembered across reloads. A natural voice reads every line from "Hi, I'm Mugil." onward, in step with the words, over quiet ambient music; each line lasts as long as its clip. Browsers hold sound until the first click or key press, so the speaker pulses until then |
 
 Keyboard: left and right change episode, space pauses, escape closes a panel. With reduced motion, nothing plays by itself and each view is shown complete. Without scripts, the full stories are shown as an ordinary page.
 

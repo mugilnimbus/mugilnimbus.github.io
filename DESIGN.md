@@ -32,13 +32,15 @@ Windows shows Ink Free. Devices without it load Shadows Into Light from `assets/
 - Title and episode tag bottom left; narration centred above the dock; detail actions bottom right.
 - Dock: previous, play or pause, next, progress line, one tick per episode in four groups. Navigation sits in the header on every view and opens a panel top right.
 - Intro: skills list bottom right, right-aligned, on windows at least 1560px wide.
+- Under 900px the header is compact and type is one step smaller.
+- Between 901px and 1400px (small laptops, tablets on their side, a phone in desktop mode) the title and actions sit above the narration.
 - Under 900px the drawing is cropped to the object, side notes and ticks are hidden, and the title and actions move above the narration.
 
 ## Sound
 
 | Part | Rule |
 | --- | --- |
-| Sound chip | In the header on every view; reads Mute, or Unmute in grey once muted; reads Tap for sound and pulses gently while a browser waits for a first click before it may play sound |
+| Sound button | A speaker icon in the header on every view: with sound waves when on, crossed out in grey when muted, pulsing gently while a browser waits for a first click before it may play sound. Its label and tooltip say Mute, Unmute or Tap for sound |
 | Voice | One natural voice (Kokoro, af_heart) reads each line as its words appear; words appear at the voice's pace |
 | Music | Two soft chords trading places every 11 seconds, low-pass filtered, far below the voice and lower still while a line is spoken |
 

@@ -15,7 +15,7 @@ const scenes = {
     <rect class="f2 solid" x="652" y="204" width="110" height="34" rx="17"/><circle class="rip" cx="706" cy="216" r="16"/>
     <path class="m2 solid edge" style="--fx:560px;--fy:380px;--tx:706px;--ty:220px" d="M0 0v22l6-5 4 10 4-2-4-9h8z"/>
     <text class="tiny f1" style="--n:2" x="421" y="190">52, 40</text><text class="tiny f1" style="--n:3" x="645" y="190">1310, 42</text>
-    <path class="d2" style="--n:5" d="M680 470C740 500 700 532 600 532S462 500 520 470"/><path class="d2" style="--n:6" d="M509 468l11 2-6 10"/>`,
+    <path class="d2 loop" style="--n:5" d="M680 470C740 500 700 532 600 532S462 500 520 470"/><path class="d2 loop" style="--n:6" d="M509 468l11 2-6 10"/>`,
   saturn: `
     <rect class="d0" x="410" y="150" width="110" height="290" rx="8" stroke-width="1.8"/>
     <g class="f0 thin"><path d="${Array.from({ length: 16 }, (_, i) => `M424 ${172 + i * 16}h${[70, 52, 80, 44, 66, 76, 38, 60, 80, 50, 72, 42, 64, 78, 46, 58][i]}`).join('')}"/></g>
