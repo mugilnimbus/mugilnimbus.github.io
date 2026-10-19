@@ -76,7 +76,7 @@ The site is static and has no dependencies. Any static host can serve the reposi
 - The skills list is shown only on windows at least 1560px wide.
 - Handwriting is Ink Free on Windows and the bundled Shadows Into Light (SIL Open Font License, in `assets/fonts/`) elsewhere.
 - Saturn MCP links to its planned public repository, Saturn-MCP.
-- Nine projects link to public source; seven are private or currently unavailable and say so.
+- Eight of the 15 projects link to public source (Saturn-MCP once its repository is published); seven are private or currently unavailable and say so.
 - Not yet checked on physical phones, other browsers or with a screen reader.
 
 The design is recorded in the [architecture model](https://mugilnimbus.github.io/docs/architecture.html).
